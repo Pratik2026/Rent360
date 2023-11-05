@@ -2,13 +2,12 @@ const Navbar = () => {
   return (
     <div>
       <div className="navbar flex justify-between items-center h-20 bg-[#ecebedff]">
-        <div className="text-4xl font-semibold text-gray-700 select-none ml-20">
+        <div className="text-4xl font-bold text-textcolor select-none ml-20">
           Rent360
         </div>
-        <div className="" id="menu-icon"></div>
-        <ul className="flex justify-center items-center gap-12 mr-28 font-medium">
-          <li className="">
-            <a href="#home">Home</a>
+        <ul className="flex justify-center items-center gap-12 mr-24 font-medium text-gray-900 text-md">
+          <li>
+            <a href="#home" className="">Home</a>
           </li>
           <li>
             <a href="#rent">Rent</a>
@@ -23,14 +22,14 @@ const Navbar = () => {
             <a href="#reviews">Reviews</a>
           </li>
         </ul>
-        <div className="header-btn">
+        <span className="mr-20 px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary">
           <a
             href="#"
-            className="mr-20 py-2 px-5 text-white bg-red-500 rounded-md transition-colors duration-500 hover:bg-var(--main-color)"
+            className=" text-white text-xl "
           >
             Login
           </a>
-        </div>
+        </span>
       </div>
     </div>
   );

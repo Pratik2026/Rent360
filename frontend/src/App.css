@@ -1,3 +1,10 @@
+:root {
+    --tw-main-color: #474fa0;
+    --tw-second-color: #ffac38;
+    --tw-text-color: #444;
+    --tw-gradient: linear-gradient(#474fa0, #7d82bb);
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -6,5 +13,4 @@
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
 }
