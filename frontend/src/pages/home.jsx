@@ -38,10 +38,15 @@ const Home = () => {
         </div>
       </section>
       <img src="" alt="" />
-    
-      <section className="rent flex flex-col justify-center items-center gap-10" id="rent">
+
+      <section
+        className="rent flex flex-col justify-center items-center gap-10"
+        id="rent"
+      >
         <div className="heading flex flex-col justify-center items-center gap-4">
-          <span className="text-lg font-normal text-textcolor">How It Work's</span>
+          <span className="text-lg font-normal text-textcolor">
+            How It Work's
+          </span>
           <div className="text-3xl font-bold">Rent with 3 Easy Steps</div>
         </div>
         <div className="rent-container flex justify-center items-center w-screen gap-10">
@@ -71,8 +76,11 @@ const Home = () => {
           </div>
         </div>
       </section>
- 
-      <section className="services flex flex-col justify-center items-center gap-10 mt-10" id="services">
+
+      <section
+        className="services flex flex-col justify-center items-center gap-10 mt-10"
+        id="services"
+      >
         <div className="heading flex flex-col justify-center items-center gap-4">
           <span className="text-lg font-medium">Best Services</span>
           <div className="text-3xl font-bold text-center">
@@ -82,76 +90,137 @@ const Home = () => {
         <div className="services-container flex justify-center items-center gap-16 flex-wrap">
           <div className="p-10 rounded-lg shadow-md w-96">
             <div className="w-full h-48">
-              <img src="electronics.jpg" alt="" className="w-full h-full rounded-lg object-cover object-center" />
+              <img
+                src="electronics.jpg"
+                alt=""
+                className="w-full h-full rounded-lg object-cover object-center"
+              />
             </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">Electronics and Gadgets for rent</p>
-            <div className="font-semibold">Rent Electronics & Gadgets for a smart living!</div>
-            <a href="#" className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4">
+            <p className="px-10 border border-textcolor w-full rounded-md my-4">
+              Electronics and Gadgets for rent
+            </p>
+            <div className="font-semibold">
+              Rent Electronics & Gadgets for a smart living!
+            </div>
+            <a
+              href="#"
+              className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
+            >
               Rent Now
             </a>
           </div>
 
           <div className="p-10 rounded-lg shadow-md w-96">
             <div className="w-full h-48">
-              <img src="home.jpg" alt="" className="w-full h-full rounded-lg object-cover object-center"  />
+              <img
+                src="home.jpg"
+                alt=""
+                className="w-full h-full rounded-lg object-cover object-center"
+              />
             </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">Rent things for your Home and Furniture</p>
+            <p className="px-10 border border-textcolor w-full rounded-md my-4">
+              Rent things for your Home and Furniture
+            </p>
             <div className="font-semibold">Home & Furniture</div>
-            <a href="#" className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4">
+            <a
+              href="#"
+              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
+            >
               Rent Now
             </a>
           </div>
 
           <div className="p-10 rounded-lg shadow-md w-96">
             <div className="w-full h-48">
-              <img src="outdoor.jpg" alt="" className="w-full h-full rounded-lg object-cover object-center"  />
+              <img
+                src="outdoor.jpg"
+                alt=""
+                className="w-full h-full rounded-lg object-cover object-center"
+              />
             </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">Rent things for your outdoor Space and Sports !</p>
+            <p className="px-10 border border-textcolor w-full rounded-md my-4">
+              Rent things for your outdoor Space and Sports !
+            </p>
             <div className="font-semibold">Outdoor & Sports</div>
-            <a href="#" className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4">
+            <a
+              href="#"
+              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
+            >
               Rent Now
             </a>
           </div>
 
           <div className="p-10 rounded-lg shadow-md w-96">
             <div className="w-full h-48">
-              <img src="fashion.jpg" alt="" className="w-full h-full rounded-lg object-cover object-center"  />
+              <img
+                src="fashion.jpg"
+                alt=""
+                className="w-full h-full rounded-lg object-cover object-center"
+              />
             </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">Rent Fashion and Accessories reated to it!</p>
+            <p className="px-10 border border-textcolor w-full rounded-md my-4">
+              Rent Fashion and Accessories reated to it!
+            </p>
             <div className="font-semibold">Fashion & Accessories</div>
-            <a href="#" className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4">
+            <a
+              href="#"
+              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
+            >
               Rent Now
             </a>
           </div>
 
           <div className="p-10 rounded-lg shadow-md w-96">
             <div className="w-full h-48">
-              <img src="tools.jpg" alt="" className="w-full h-full rounded-lg object-cover object-center"  />
+              <img
+                src="tools.jpg"
+                alt=""
+                className="w-full h-full rounded-lg object-cover object-center"
+              />
             </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">Tools and Equipments for rent in your daily life!</p>
+            <p className="px-10 border border-textcolor w-full rounded-md my-4">
+              Tools and Equipments for rent in your daily life!
+            </p>
             <div className="font-semibold">Tools & Equipments</div>
-            <a href="#" className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4">
+            <a
+              href="#"
+              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
+            >
               Rent Now
             </a>
           </div>
 
           <div className="p-10 rounded-lg shadow-md w-96">
             <div className="w-full h-48">
-              <img src="vechicles.jpg" alt="" className="w-full h-full rounded-lg object-cover object-center"  />
+              <img
+                src="vechicles.jpg"
+                alt=""
+                className="w-full h-full rounded-lg object-cover object-center"
+              />
             </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">Vechicles and Transportation for rent in your daily life!</p>
+            <p className="px-10 border border-textcolor w-full rounded-md my-4">
+              Vechicles and Transportation for rent in your daily life!
+            </p>
             <div className="font-semibold">Vechicles & Transportation</div>
-            <a href="#" className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4">
+            <a
+              href="#"
+              className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
+            >
               Rent Now
             </a>
           </div>
         </div>
       </section>
 
-      <section className="about flex flex-col justify-center items-center gap-10 mt-10" id="about">
+      <section
+        className="about flex flex-col justify-center items-center gap-10 mt-10"
+        id="about"
+      >
         <div className="heading flex flex-col justify-center items-center gap-2">
           <span className="text-lg font-medium">About Us</span>
-          <div className="text-3xl font-bold text-center">Best Customer Experience</div>
+          <div className="text-3xl font-bold text-center">
+            Best Customer Experience
+          </div>
         </div>
         <div className="about-container flex justify-end items-center">
           <div className="about-img  w-1/2">
@@ -169,22 +238,34 @@ const Home = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ad
               ratione iste quibusdam praesentium ipsa vel tenetur autem?
             </p>
-            <a href="#" className="btn w-fit font-medium text-white px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary">
+            <a
+              href="#"
+              className="btn w-fit font-medium text-white px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary"
+            >
               Learn More
             </a>
           </div>
         </div>
       </section>
 
-      <section className="reviews flex flex-col justify-center items-center gap-10 mt-10" id="reviews">
+      <section
+        className="reviews flex flex-col justify-center items-center gap-10 mt-10"
+        id="reviews"
+      >
         <div className="heading flex flex-col justify-center items-center gap-4">
           <span className="text-lg font-medium">Reviews</span>
-          <div className="text-3xl font-bold text-center">What Our Customers Say</div>
+          <div className="text-3xl font-bold text-center">
+            What Our Customers Say
+          </div>
         </div>
         <div className="reviews-container flex justify-center items-center flex-wrap gap-16">
           <div className="box p-10 rounded-lg shadow-md w-96">
             <div className="w-32 h-32">
-              <img src={c1} alt=""   className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"/>
+              <img
+                src={c1}
+                alt=""
+                className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"
+              />
             </div>
             <div className="text-lg font-semibold my-2">Customer's Name</div>
             <div className="stars">
@@ -203,7 +284,11 @@ const Home = () => {
 
           <div className="box p-10 rounded-lg shadow-md w-96">
             <div className="w-32 h-32">
-              <img src={c2} alt=""   className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"/>
+              <img
+                src={c2}
+                alt=""
+                className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"
+              />
             </div>
             <div className="text-lg font-semibold my-2">Customer's Name</div>
             <div className="stars">
@@ -221,7 +306,11 @@ const Home = () => {
 
           <div className="box p-10 rounded-lg shadow-md w-96">
             <div className="w-32 h-32">
-              <img src={c3} alt="" className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"/>
+              <img
+                src={c3}
+                alt=""
+                className="rev-img w-full h-full rounded-full object-cover object-center border-2 border-secondary"
+              />
             </div>
             <div className="text-lg font-semibold my-2">Customer's Name</div>
             <div className="stars">
@@ -239,17 +328,27 @@ const Home = () => {
           </div>
         </div>
       </section>
- 
+
       <section className="newsletter flex flex-col justify-center items-center bg-[linear-gradient(#474fa0,#7d82bb)] h-48">
-        <div className="text-3xl text-white font-medium">Subscribe To Our Newsletter</div>
+        <div className="text-3xl text-white font-medium">
+          Subscribe To Our Newsletter
+        </div>
         <div className="box mt-4 bg-white rounded-md p-2 w-350 flex justify-between">
-          <input type="text" placeholder="Enter Your Email..." className="border-none outline-none" />
-          <a href="#" className="btn w-fit font-medium text-white px-4 py-2 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary">
+          <input
+            type="text"
+            placeholder="Enter Your Email..."
+            className="border-none outline-none"
+          />
+          <a
+            href="#"
+            className="btn w-fit font-medium text-white px-4 py-2 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary"
+          >
             Subscribe
           </a>
         </div>
         <br />
       </section>
+
       <div className="copyright p-5 flex justify-between items-center">
         <p>&#169; Rent360 All Rights Reserved</p>
         <div className="social">
