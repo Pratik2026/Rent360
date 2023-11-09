@@ -20,6 +20,7 @@ function Rent() {
       </header> */}
       {/* Container */}
       <main className=" lg:max-w-[1200px] lg:flex lg:flex-row lg:mx-auto lg:my-0 lg:p-[15px] flex-col mt-[60px]">
+        {/* Left Column */}
         <div className="left-column lg:w-[65%] w-full">
           <img
             data-image="red"
