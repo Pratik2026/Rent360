@@ -7,10 +7,12 @@ const Navbar = () => {
         </div>
         <ul className="flex justify-center items-center gap-12 mr-24 font-medium text-gray-900 text-md">
           <li>
-            <a href="#home" className="">Home</a>
+            <a href="/" className="">
+              Home
+            </a>
           </li>
           <li>
-            <a href="#rent">Rent</a>
+            <a href="/rent">Rent</a>
           </li>
           <li>
             <a href="#services">Services</a>
@@ -23,10 +25,7 @@ const Navbar = () => {
           </li>
         </ul>
         <span className="mr-20 px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary">
-          <a
-            href="#"
-            className=" text-white text-xl "
-          >
+          <a href="#" className=" text-white text-xl ">
             Login
           </a>
         </span>

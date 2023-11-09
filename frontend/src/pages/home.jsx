@@ -103,7 +103,7 @@ const Home = () => {
               Rent Electronics & Gadgets for a smart living!
             </div>
             <a
-              href="#"
+              href="./rent"
               className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
             >
               Rent Now
