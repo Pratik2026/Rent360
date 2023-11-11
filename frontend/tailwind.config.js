@@ -1,13 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+
+import keepPreset from "keep-react/src/keep-preset.js";
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/keep-react/**/*.{js,jsx,ts,tsx}"
   ],
+  presets: [keepPreset],
   theme: {
     extend: {
       colors: {
-        primary: '#474fa0',
+        custom_primary: '#474fa0',
         secondary: '#ffac38',
         textcolor: '#444',
         grad: 'linear-gradient(#474fa0,#7d82bb)',

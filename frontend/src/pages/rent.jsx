@@ -52,6 +52,7 @@ function Rent() {
               <span>Specifications</span>
               <div className="cable-choose mb-5 ">
                 {["Good headphone", "best", "Long-coiled"].map((name) => (
+                  // eslint-disable-next-line react/jsx-key
                   <button className="text-sm text-[#5E6977] bg-white cursor-pointer transition-all duration-[0.5s] px-5 py-[13px] rounded-md border-2 border-solid border-[#E1E8EE] hover:border-2 hover:border-solid hover:border-[#86939E]">
                     {name}
                   </button>

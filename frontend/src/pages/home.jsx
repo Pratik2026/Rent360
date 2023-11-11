@@ -3,6 +3,8 @@ import Navbar from "../components/navbar";
 import c1 from "../assets/c1.png";
 import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.png";
+import { CardComponent } from "../components/cardcomponent.jsx";
+import { CarouselComponent } from "../components/slider.jsx";
 
 const Home = () => {
   return (
@@ -13,10 +15,10 @@ const Home = () => {
         className="text-image flex justify-between items-center"
         id="home"
       >
-        <div className="flex flex-col justify-center ml-20 h-[calc(100vh-10vh)] gap-32">
+        <div className="flex flex-col justify-center ml-20 h-[calc(100vh-10vh)] gap-32 w-1/3">
           <div className="text flex flex-col gap-4">
             <div className="text-6xl font-bold tracking-wider">
-              <span className="text-primary">Looking </span> to <br />
+              <span className="text-custom_primary">Looking </span> to <br />
               rent anthing?
             </div>
             <p className="text-md text-textcolor font-medium">
@@ -30,14 +32,16 @@ const Home = () => {
                 type="submit"
                 name=""
                 id=""
-                className="py-1 px-4 text-white text-lg bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary"
+                className="py-1 px-4 text-white text-lg bg-red-500 rounded-md transition-colors duration-500 hover:bg-custom_primary"
                 value="Try It Out!"
               />
             </form>
           </div>
         </div>
+        <div className="w-2/3 mr-20">
+          <CarouselComponent />
+        </div>
       </section>
-      <img src="" alt="" />
 
       <section
         className="rent flex flex-col justify-center items-center gap-10"
@@ -51,7 +55,7 @@ const Home = () => {
         </div>
         <div className="rent-container flex justify-center items-center w-screen gap-10">
           <div className="box flex flex-col justify-center items-center gap-4">
-            <i className="bx bxs-map"></i>
+            <img src={c1} alt="" />
             <div className="font-medium text-xl">Choose A Location</div>
             <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
@@ -59,7 +63,7 @@ const Home = () => {
             </p>
           </div>
           <div className="box flex flex-col justify-center items-center gap-4">
-            <i className="bx bxs-calendar-check"></i>
+            <img src={c1} alt="" />
             <div className="font-medium text-xl">Pick-Up Date</div>
             <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
@@ -67,7 +71,7 @@ const Home = () => {
             </p>
           </div>
           <div className="box flex flex-col justify-center items-center gap-4">
-            <i className="bx bxs-calendar-star"></i>
+            <img src={c1} alt="" />
             <div className="font-medium text-xl">Rent An Item</div>
             <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
@@ -88,127 +92,43 @@ const Home = () => {
           </div>
         </div>
         <div className="services-container flex justify-center items-center gap-16 flex-wrap">
-          <div className="p-10 rounded-lg shadow-md w-96">
-            <div className="w-full h-48">
-              <img
-                src="electronics.jpg"
-                alt=""
-                className="w-full h-full rounded-lg object-cover object-center"
-              />
-            </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">
-              Electronics and Gadgets for rent
-            </p>
-            <div className="font-semibold">
-              Rent Electronics & Gadgets for a smart living!
-            </div>
-            <a
-              href="./rent"
-              className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
-            >
-              Rent Now
-            </a>
-          </div>
-
-          <div className="p-10 rounded-lg shadow-md w-96">
-            <div className="w-full h-48">
-              <img
-                src="home.jpg"
-                alt=""
-                className="w-full h-full rounded-lg object-cover object-center"
-              />
-            </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">
-              Rent things for your Home and Furniture
-            </p>
-            <div className="font-semibold">Home & Furniture</div>
-            <a
-              href="#"
-              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
-            >
-              Rent Now
-            </a>
-          </div>
-
-          <div className="p-10 rounded-lg shadow-md w-96">
-            <div className="w-full h-48">
-              <img
-                src="outdoor.jpg"
-                alt=""
-                className="w-full h-full rounded-lg object-cover object-center"
-              />
-            </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">
-              Rent things for your outdoor Space and Sports !
-            </p>
-            <div className="font-semibold">Outdoor & Sports</div>
-            <a
-              href="#"
-              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
-            >
-              Rent Now
-            </a>
-          </div>
-
-          <div className="p-10 rounded-lg shadow-md w-96">
-            <div className="w-full h-48">
-              <img
-                src="fashion.jpg"
-                alt=""
-                className="w-full h-full rounded-lg object-cover object-center"
-              />
-            </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">
-              Rent Fashion and Accessories reated to it!
-            </p>
-            <div className="font-semibold">Fashion & Accessories</div>
-            <a
-              href="#"
-              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
-            >
-              Rent Now
-            </a>
-          </div>
-
-          <div className="p-10 rounded-lg shadow-md w-96">
-            <div className="w-full h-48">
-              <img
-                src="tools.jpg"
-                alt=""
-                className="w-full h-full rounded-lg object-cover object-center"
-              />
-            </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">
-              Tools and Equipments for rent in your daily life!
-            </p>
-            <div className="font-semibold">Tools & Equipments</div>
-            <a
-              href="#"
-              className="font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
-            >
-              Rent Now
-            </a>
-          </div>
-
-          <div className="p-10 rounded-lg shadow-md w-96">
-            <div className="w-full h-48">
-              <img
-                src="vechicles.jpg"
-                alt=""
-                className="w-full h-full rounded-lg object-cover object-center"
-              />
-            </div>
-            <p className="px-10 border border-textcolor w-full rounded-md my-4">
-              Vechicles and Transportation for rent in your daily life!
-            </p>
-            <div className="font-semibold">Vechicles & Transportation</div>
-            <a
-              href="#"
-              className="btn font-medium flex justify-center bg-red-500 text-white p-2 rounded-md hover:bg-primary mt-4"
-            >
-              Rent Now
-            </a>
-          </div>
+        <div className="services-container flex justify-center items-center gap-16 flex-wrap">
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />{" "}
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />{" "}
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />{" "}
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />{" "}
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />{" "}
+        <CardComponent
+          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
+          price="Rs 1000"
+          title="Nike Shoes"
+        />
+      </div>
         </div>
       </section>
 
@@ -224,10 +144,10 @@ const Home = () => {
         </div>
         <div className="about-container flex justify-end items-center">
           <div className="about-img  w-1/2">
-            <img src="sample.png" alt="" />
+            <img src="#" alt="" />
           </div>
           <div className="about-text flex flex-col gap-4 w-1/2">
-            <span className="text-primary font-medium">ABOUT US</span>
+            <span className="text-custom_primary font-medium">ABOUT US</span>
             <p className="text-left">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum,
               sint incidunt. Nihil assumenda hic laborum libero quasi maxime
@@ -240,7 +160,7 @@ const Home = () => {
             </p>
             <a
               href="#"
-              className="btn w-fit font-medium text-white px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary"
+              className="btn w-fit font-medium text-white px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-custom_primary"
             >
               Learn More
             </a>
@@ -341,7 +261,7 @@ const Home = () => {
           />
           <a
             href="#"
-            className="btn w-fit font-medium text-white px-4 py-2 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-primary"
+            className="btn w-fit font-medium text-white px-4 py-2 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-custom_primary"
           >
             Subscribe
           </a>
