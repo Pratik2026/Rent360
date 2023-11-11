@@ -23,83 +23,85 @@ const SellForm = () => {
   };
 
   return (
-    <form className="max-w-2xl mx-auto mt-6" onSubmit={handleSubmit}>
-      <div className="text-center text-2xl font-semibold mb-2">
+    <div>
+      <form className="max-w-2xl mx-auto mt-6" onSubmit={handleSubmit}>
+        <div className="text-center text-2xl font-semibold mb-4">
           POST YOUR PRODUCT
         </div>
         <div className="box border border-slate-200 p-4 rounded-lg">
-        
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="title"
-          >
-            Title
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="title"
-            type="text"
-            name="title"
-            value={product.title}
-            onChange={handleChange}
-          />
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="title"
+            >
+              Title
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="title"
+              type="text"
+              name="title"
+              value={product.title}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="description"
+            >
+              Description
+            </label>
+            <textarea
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="description"
+              name="description"
+              value={product.description}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="price"
+            >
+              Price
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="price"
+              type="text"
+              name="price"
+              value={product.price}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="image"
+            >
+              Image
+            </label>
+            <UploadComponent />
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="description"
+        <div className="flex items-center justify-between mt-8">
+          <button
+            className="w-full bg-red-500 hover:bg-custom_primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
           >
-            Description
-          </label>
-          <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="description"
-            name="description"
-            value={product.description}
-            onChange={handleChange}
-          />
+            POST NOW
+          </button>
         </div>
-
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="price"
-          >
-            Price
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="price"
-            type="text"
-            name="price"
-            value={product.price}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="image"
-          >
-            Image
-          </label>
-          <UploadComponent />
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between mt-8">
-        <button
-          className="w-full bg-red-500 hover:bg-custom_primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >
-          POST NOW
-        </button>
-      </div>
-      <Footer />
-    </form>
+      </form>
+      <div className="mt-48"><Footer /></div>
+      
+    </div>
   );
 };
 
