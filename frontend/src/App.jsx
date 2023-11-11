@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Rent from "./pages/rent";
 import Products from "./pages/Products.jsx";
 import SellForm from "./pages/sellForm.jsx";
+import View from "./pages/viewitem.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="" element={<Home />} />
         <Route path="rent" element={<Rent />} />
         <Route path="products" element={<Products />} />
+        <Route path="/products/product" element={<View />} />
         <Route path="sellform" element={<SellForm />} />
 
       </Routes>

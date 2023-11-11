@@ -1,8 +1,14 @@
 "use client";
 import { Badge, Button, Card } from "keep-react";
-
+import { useNavigate } from "react-router-dom";
 
 export const CardComponent = (props) => {
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    console.log("clicked");
+    navigate("/products/product");
+  };
   return (
     <>
       <Card
@@ -21,7 +27,7 @@ export const CardComponent = (props) => {
             <Card.Title>{props.title}</Card.Title>
           </Card.Container>
           <Card.Container className="flex items-center justify-start gap-5">
-            <Button size="sm" type="outlineGray">
+            <Button size="sm" type="outlineGray" onClick={handleClick}>
               RENT NOW
             </Button>
           </Card.Container>

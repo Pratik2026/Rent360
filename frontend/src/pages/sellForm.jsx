@@ -1,6 +1,7 @@
 // SellForm.js
 import { useState } from "react";
 import { UploadComponent } from "../components/upload";
+import Footer from "../components/footer";
 
 const SellForm = () => {
   const [product, setProduct] = useState({
@@ -97,6 +98,7 @@ const SellForm = () => {
           POST NOW
         </button>
       </div>
+      <Footer />
     </form>
   );
 };

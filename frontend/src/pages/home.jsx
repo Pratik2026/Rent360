@@ -4,7 +4,8 @@ import c1 from "../assets/c1.png";
 import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.png";
 import { CardComponent } from "../components/cardcomponent.jsx";
-import { CarouselComponent } from "../components/slider.jsx";
+import { CarouselComponent } from "../components/carousel.jsx";
+import Footer from "../components/footer.jsx";
 
 const Home = () => {
   return (
@@ -269,20 +270,7 @@ const Home = () => {
         <br />
       </section>
 
-      <div className="copyright p-5 flex justify-between items-center">
-        <p>&#169; Rent360 All Rights Reserved</p>
-        <div className="social">
-          <a href="#">
-            <i className="bx bxl-facebook"></i>
-          </a>
-          <a href="#">
-            <i className="bx bxl-twitter"></i>
-          </a>
-          <a href="#">
-            <i className="bx bxl-instagram"></i>
-          </a>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };

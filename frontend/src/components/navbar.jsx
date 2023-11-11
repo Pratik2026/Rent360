@@ -3,6 +3,7 @@ import c1 from "../assets/c1.png";
 import { AvatarComponent } from "./Avatar.jsx";
 import { SearchBarComponent } from "./search.jsx";
 import { ButtonComponent } from "./sellbutton.jsx";
+import { Location } from "./location.jsx";
 
 const Navbar = () => {
   const [loginstatus, setLoginStatus] = React.useState(true);
@@ -14,6 +15,7 @@ const Navbar = () => {
           Rent360
         </div>
 
+        <div><Location /></div>
         <div className="search-bar w-1/2">
           <SearchBarComponent />
         </div>
