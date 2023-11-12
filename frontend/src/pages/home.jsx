@@ -55,24 +55,24 @@ const Home = () => {
           <div className="text-3xl font-bold">Rent with 3 Easy Steps</div>
         </div>
         <div className="rent-container flex justify-center items-center w-screen gap-10">
-          <div className="box flex flex-col justify-center items-center gap-4">
-            <img src={c1} alt="" />
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4">
+            <img className="rounded-md" src={c1} alt="" />
             <div className="font-medium text-xl">Choose A Location</div>
             <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4">
-            <img src={c1} alt="" />
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4">
+            <img className="rounded-md" src={c1} alt="" />
             <div className="font-medium text-xl">Pick-Up Date</div>
             <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4">
-            <img src={c1} alt="" />
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4">
+            <img className="rounded-md" src={c1} alt="" />
             <div className="font-medium text-xl">Rent An Item</div>
             <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste

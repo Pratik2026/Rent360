@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar flex justify-between items-center h-20 bg-[#ecebedff]">
+      <div className="navbar flex justify-between items-center h-20 bg-[#ffffff] shadow-md">
         <div className="text-4xl font-bold text-textcolor select-none ml-20">
           Rent360
         </div>
@@ -23,7 +23,7 @@ const Navbar = () => {
         {loginstatus ? (
           <div className="flex gap-8">
             <ButtonComponent />
-            <div className="mr-6">
+            <div className="mr-6 hover:cursor-pointer">
               <AvatarComponent avatar={c1} />
             </div>
           </div>

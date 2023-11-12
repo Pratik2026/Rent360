@@ -13,7 +13,7 @@ export const ButtonComponent = () => {
     
   return (
     <>
-    <div className="btn rounded-lg flex gap-2 border border-[#002F34] shadow-sm">
+    <div className="btn rounded-lg flex gap-2 border border-custom_primary border-2 shadow-sm">
       <Button type="secondary" size="sm" pill={true} onClick={handleOnClick}>
         <span className="pr-2">
           <Plus size={24} />
