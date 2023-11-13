@@ -24,12 +24,12 @@ const SellForm = () => {
 
   return (
     <div>
-      <form className="max-w-2xl mx-auto mt-6" onSubmit={handleSubmit}>
-        <div className="text-center text-2xl font-semibold mb-4">
+      <form className="max-w-2xl mx-auto mt-8" onSubmit={handleSubmit}>
+        <div className="text-center text-2xl font-semibold mb-8">
           POST YOUR PRODUCT
         </div>
         <div className="box border border-slate-200 p-4 rounded-lg">
-          <div className="mb-4">
+          <div className="mb-4 ">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="title"
@@ -37,7 +37,7 @@ const SellForm = () => {
               Title
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
               id="title"
               type="text"
               name="title"
@@ -54,10 +54,25 @@ const SellForm = () => {
               Description
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
               id="description"
               name="description"
               value={product.description}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="address"
+            >
+              Address
+            </label>
+            <textarea
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
+              id="description"
+              name="description"
+              value={product.address}
               onChange={handleChange}
             />
           </div>
@@ -70,7 +85,7 @@ const SellForm = () => {
               Price
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
               id="price"
               type="text"
               name="price"

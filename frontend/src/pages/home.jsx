@@ -3,9 +3,13 @@ import Navbar from "../components/navbar";
 import c1 from "../assets/c1.png";
 import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.png";
-import { CardComponent } from "../components/cardcomponent.jsx";
+import about from "../assets/about.jpg";
+import { ProductCard } from "../components/productCard.jsx";
 import { CarouselComponent } from "../components/carousel.jsx";
 import Footer from "../components/footer.jsx";
+import { Calendar, MapPin, Package } from "phosphor-react";
+import { Button } from "keep-react";
+import { RatingComponent } from "./rating.jsx";
 
 const Home = () => {
   return (
@@ -13,68 +17,57 @@ const Home = () => {
       <Navbar />
 
       <section
-        className="text-image flex justify-between items-center"
+        className="text-image flex justify-between mt-20"
         id="home"
       >
-        <div className="flex flex-col justify-center ml-20 h-[calc(100vh-10vh)] gap-32 w-1/3">
+        <div className="flex flex-col xl:ml-20 md:ml-10 gap-16 w-1/3 my-24">
           <div className="text flex flex-col gap-4">
-            <div className="text-6xl font-bold tracking-wider">
-              <span className="text-custom_primary">Looking </span> to <br />
+            <div className=" xl:text-[52px] lg:text-[30px] sm:text-[20px] font-bold tracking-wider">
+              <span className="text-custom_primary ">Looking </span> to <br />
               rent anthing?
             </div>
-            <p className="text-md text-textcolor font-medium">
-              Lorem, ipsum dolor sit amet consectetur adi <br /> pisicing elit.
-              Consectetur, eos atque!
+            <p className="text-md lg:text-sm text-textcolor font-medium">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Magni maiores, ducimus quibusdam temporibus aliquid
             </p>
           </div>
-          <div className="form-container">
-            <form action="">
-              <input
-                type="submit"
-                name=""
-                id=""
-                className="py-1 px-4 text-white text-lg bg-red-500 rounded-md transition-colors duration-500 hover:bg-custom_primary"
-                value="Try It Out!"
-              />
-            </form>
-          </div>
+          <Button type="primary" size="lg" color="success" href="/products" >Try it Out!</Button>
         </div>
-        <div className="w-2/3 mr-20">
+        <div className="w-2/3 h-full my-4">
           <CarouselComponent />
         </div>
       </section>
 
       <section
-        className="rent flex flex-col justify-center items-center gap-10"
+        className="rent flex flex-col justify-center items-center gap-10 mt-10 mb-20"
         id="rent"
       >
         <div className="heading flex flex-col justify-center items-center gap-4">
-          <span className="text-lg font-normal text-textcolor">
+          <span className="text-lg font-semibold text-custom_primary">
             How It Work's
           </span>
           <div className="text-3xl font-bold">Rent with 3 Easy Steps</div>
         </div>
         <div className="rent-container flex justify-center items-center w-screen gap-10">
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4">
-            <img className="rounded-md" src={c1} alt="" />
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+            <MapPin size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Choose A Location</div>
-            <p className="text-center mx-5">
+            <p className="text-center mx-5 w-2/3">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4">
-            <img className="rounded-md" src={c1} alt="" />
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+            <Calendar size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Pick-Up Date</div>
-            <p className="text-center mx-5">
+            <p className="text-center mx-5 w-2/3">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4">
-            <img className="rounded-md" src={c1} alt="" />
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+            <Package size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Rent An Item</div>
-            <p className="text-center mx-5">
+            <p className="text-center mx-5 w-2/3">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
@@ -83,48 +76,48 @@ const Home = () => {
       </section>
 
       <section
-        className="services flex flex-col justify-center items-center gap-10 mt-10"
+        className="services flex flex-col justify-center items-center gap-10 my-10"
         id="services"
       >
         <div className="heading flex flex-col justify-center items-center gap-4">
-          <span className="text-lg font-medium">Best Services</span>
-          <div className="text-3xl font-bold text-center">
-            Explore Our Top Deals <br /> From Our Top Rated Users
+          <span className="text-lg font-semibold text-custom_primary">Best Services</span>
+          <div className="text-[32px] font-bold text-center">
+            Explore Our Top Deals
           </div>
         </div>
         <div className="services-container flex justify-center items-center gap-16 flex-wrap">
         <div className="services-container flex justify-center items-center gap-16 flex-wrap">
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
         />
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
         />{" "}
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
         />{" "}
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
         />{" "}
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
         />{" "}
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
         />{" "}
-        <CardComponent
+        <ProductCard
           img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
           price="Rs 1000"
           title="Nike Shoes"
@@ -134,7 +127,7 @@ const Home = () => {
       </section>
 
       <section
-        className="about flex flex-col justify-center items-center gap-10 mt-10"
+        className="about flex flex-col justify-center items-center gap-10 mt-10 bg-[#E8EAF6] py-5"
         id="about"
       >
         <div className="heading flex flex-col justify-center items-center gap-2">
@@ -144,10 +137,10 @@ const Home = () => {
           </div>
         </div>
         <div className="about-container flex justify-end items-center">
-          <div className="about-img  w-1/2">
-            <img src="#" alt="" />
+          <div className="about-img  w-1/3 flex justify-center">
+            <img src={about} alt="" className="h-72"/>
           </div>
-          <div className="about-text flex flex-col gap-4 w-1/2">
+          <div className="about-text flex flex-col gap-4 w-2/3">
             <span className="text-custom_primary font-medium">ABOUT US</span>
             <p className="text-left">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum,
@@ -157,7 +150,7 @@ const Home = () => {
             </p>
             <p className="text-left">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ad
-              ratione iste quibusdam praesentium ipsa vel tenetur autem?
+              ratione iste quibusdam praesentium ipsa vel tenetur autem? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo veniam perferendis illum eum dolor consequatur, doloremque sapiente rerum ea esse.
             </p>
             <a
               href="#"
@@ -170,7 +163,7 @@ const Home = () => {
       </section>
 
       <section
-        className="reviews flex flex-col justify-center items-center gap-10 mt-10"
+        className="reviews flex flex-col justify-center items-center gap-10 my-10 "
         id="reviews"
       >
         <div className="heading flex flex-col justify-center items-center gap-4">
@@ -189,12 +182,8 @@ const Home = () => {
               />
             </div>
             <div className="text-lg font-semibold my-2">Customer's Name</div>
-            <div className="stars">
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star-half"></i>
+            <div className="stars py-2">
+              <RatingComponent />
             </div>
             <p className="italic">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
@@ -212,12 +201,8 @@ const Home = () => {
               />
             </div>
             <div className="text-lg font-semibold my-2">Customer's Name</div>
-            <div className="stars">
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star-half"></i>
+            <div className="stars py-2">
+              <RatingComponent />
             </div>
             <p className="italic">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit at
@@ -234,12 +219,8 @@ const Home = () => {
               />
             </div>
             <div className="text-lg font-semibold my-2">Customer's Name</div>
-            <div className="stars">
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star"></i>
-              <i className="bx bxs-star-half"></i>
+            <div className="stars py-2">
+              <RatingComponent />
             </div>
             <p className="italic">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste

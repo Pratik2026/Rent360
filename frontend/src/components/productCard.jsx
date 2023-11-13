@@ -1,9 +1,9 @@
 "use client";
+import { Heart } from "phosphor-react";
 import { Badge, Button, Card } from "keep-react";
 import { useNavigate } from "react-router-dom";
 
-export const CardComponent = (props) => {
-
+export const ProductCard = (props) => {
   const navigate = useNavigate();
   const handleClick = () => {
     console.log("clicked");
@@ -16,6 +16,9 @@ export const CardComponent = (props) => {
         imgSrc={props.img}
         imgSize="md"
       >
+        <Card.Container className="absolute top-3.5 right-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-50/50">
+          <Heart size={20} weight="bold" color="white" />
+        </Card.Container>
         <Card.Container className="p-6">
           <Card.Container className="flex items-center justify-between">
             <Badge size="xs" colorType="light" color="gray">
@@ -27,7 +30,7 @@ export const CardComponent = (props) => {
             <Card.Title>{props.title}</Card.Title>
           </Card.Container>
           <Card.Container className="flex items-center justify-start gap-5">
-            <Button size="sm" type="outlineGray" onClick={handleClick}>
+            <Button size="sm" type="primary" color="error" onClick={handleClick}>
               RENT NOW
             </Button>
           </Card.Container>
