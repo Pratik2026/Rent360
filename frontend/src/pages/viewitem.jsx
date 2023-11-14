@@ -6,9 +6,44 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Badge } from "keep-react";
 import { useState } from "react";
-
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 function View() {
   const [Itemstatus, setItemStatus] = useState("Available");
+
+
+  const { id } = useParams();
+
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post("http://localhost:7000/products", {  });
+        console.log(response.data);
+
+        if (
+          response.data 
+        ) {
+          setProducts(response.data[id-1]);
+        } else {
+          console.log("No products found in the response.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Now you can safely use products here
+    if (products) {
+      console.log(products);
+    }
+  }, [products]);
+
 
   return (
     <div>
@@ -23,24 +58,17 @@ function View() {
               <div className="text-4xl text-bold text-gray-900 m-2">
                 Description
               </div>
+
               <p className="text-gray-900 m-2 text-sm">
-                Lorem ipsum dolor sit
-                <br />
-                <br /> amet consectetur adipisicing elit.
-                <br />
-                <br />
-                Voluptates, quia! Distinctio
-                <br />
-                <br /> reprehenderit magni ratione at ducimus
-                <br />
-                <br />
-                quidem iusto reiciendis vero!
+                {products && <p>{products.description}</p>}
               </p>
             </div>
           </div>
           <div className="right-section w-full md:w-1/3 flex flex-col my-16 gap-8 md:mt-0">
             <div className="pricecard border border-gray-100 h-48 flex flex-col justify-around p-4 mr-4 bg-white rounded-md">
-              <div className="price font-bold text-8xl">Rs.1000 </div>
+              <div className="price font-bold text-8xl">
+                {products && <p>{products.price}</p>}
+              </div>
               <div className="w-16 flex gap-4">
                 <Badge size="sm" colorType="light" color="gray">
                   Status
@@ -55,7 +83,7 @@ function View() {
               </div>
 
               <div className="bottom flex justify-between">
-                <p className="address">Lorem ipsum dolor sit amet.</p>
+                <p className="address">{products && <p>{products.title}</p>}</p>
                 <span>
                   <Badge size="sm" colorType="light" color="gray">
                     26 Oct
@@ -65,7 +93,7 @@ function View() {
             </div>
             <div className="ownerdetail h-48 border border-gray-100 flex flex-col justify-center items-center gap-4 mr-4 bg-white rounded-md">
               <p className="text-gray-900 font-bold py-2 mx-4 align-left">
-                Seller Name
+                {products && <p>{products.userid}</p>}
               </p>
               <button className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-gray-900 flex justify-center items-center gap-2">
                 <Chat size={32} color="#5AE4A8" weight="bold" />

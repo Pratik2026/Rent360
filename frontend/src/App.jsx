@@ -8,20 +8,26 @@ import View from "./pages/viewitem.jsx";
 import UserProfile from "./pages/userProfile.jsx";
 import { NotFound } from "./components/notfound.jsx";
 import { Wishlist } from "./pages/wishlist.jsx";
+import { Login } from "./pages/login.jsx";
+import { Register } from "./pages/register.jsx";
+import FilteredProducts from "./pages/filteredProduct.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="" element={<Home />} />
-        <Route path="rent" element={<Rent />} />
-        <Route path="products" element={<Products />} />
-        <Route path="products/product" element={<View />} />
-        <Route path="sellform" element={<SellForm />} />
+        <Route path="/rent" element={<Rent />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/product/:id" element={<View />} />
+        <Route path="/sellform" element={<SellForm />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/wishlist" element={<Wishlist />} />
-
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/search/:category" element={<FilteredProducts />} />
+        <Route path="/profile/:userid" element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,10 +1,42 @@
 import { DropdownComponent } from "../components/dropdown.jsx";
 import { ProductCard } from "../components/productCard.jsx";
-import { PaginationComponent } from "../components/pagination.jsx";
 import Footer from "../components/footer.jsx";
 import Navbar from "../components/navbar.jsx";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Products = () => {
+
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post("http://localhost:7000/products", {});
+
+        if (
+          response.data &&
+          Array.isArray(response.data) &&
+          response.data.length > 0
+        ) {
+          setProducts(response.data); 
+        } else {
+          console.log("No products found in the response.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Now you can safely use products here
+    if (products.length > 0) {
+      console.log(products[0].title);
+    }
+  }, [products]);
+
   return (
     <div>
       <Navbar />
@@ -13,44 +45,19 @@ const Products = () => {
       </div>
 
       <div className="services-container flex justify-center items-center gap-16 flex-wrap">
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />{" "}
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />{" "}
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />{" "}
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />{" "}
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />{" "}
-        <ProductCard
-          img="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
-          price="Rs 1000"
-          title="Nike Shoes"
-        />
-      </div>
-      <div className="flex justify-center my-10">
-        <PaginationComponent />
+        {products.length > 0 ? (
+          products.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              img={product.product_image_url}
+              price={`Rs ${product.price}`}
+              title={product.title}
+            />
+          ))
+        ) : (
+          <p>No products found</p>
+        )}
       </div>
       <Footer />
     </div>

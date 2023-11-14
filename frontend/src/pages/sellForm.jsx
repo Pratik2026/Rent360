@@ -1,13 +1,20 @@
 // SellForm.js
 import { useState } from "react";
-import { UploadComponent } from "../components/upload";
+// import { UploadComponent } from "../components/upload";
 import Footer from "../components/footer";
+import { Toaster, toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SellForm = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState({
     title: "",
     description: "",
     price: "",
+    address: "",
+    seller_mobile_number: "",
+    product_image_url: ""
   });
 
   const handleChange = (e) => {
@@ -17,8 +24,35 @@ const SellForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const { title, description, price, address, seller_mobile_number, product_image_url } = product;
+    const userid = localStorage.getItem("userid");
+
+        const response = await axios.post('http://localhost:7000/addProduct', {
+        title,
+        description,
+        price,
+        address,
+        seller_mobile_number,
+        product_image_url,
+        userid
+        });
+
+    const data = response.data;
+    console.log("1");
+
+    if (data.status === false) {
+          console.log("2");
+        toast.error(data.message, toastOptions);
+        }
+
+    if (data.status === true) {
+        console.log("3");
+      // toast.success(data.message, toastOptions);
+        alert("added to cart");
+        setTimeout(() => navigate("/"), 1000);
+        }
     console.log("Form submitted:", product);
   };
 
@@ -70,8 +104,8 @@ const SellForm = () => {
             </label>
             <textarea
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
-              id="description"
-              name="description"
+              id="address"
+              name="address"
               value={product.address}
               onChange={handleChange}
             />
@@ -97,11 +131,35 @@ const SellForm = () => {
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="image"
+              htmlFor="seller_mobile_number"
+            >
+              Phone Number
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
+              id="seller_mobile_number"
+              type="text"
+              name="seller_mobile_number"
+              value={product.seller_mobile_number}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="product_image_url"
             >
               Image
             </label>
-            <UploadComponent />
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-custom_primary focus:border-2"
+              id="product_image_url"
+              type="text"
+              name="product_image_url"
+              value={product.product_image_url}
+              onChange={handleChange}
+            />
           </div>
         </div>
 
@@ -114,8 +172,10 @@ const SellForm = () => {
           </button>
         </div>
       </form>
-      <div className="mt-48"><Footer /></div>
-      
+      <div className="mt-48">
+        <Footer />
+      </div>
+      <Toaster position="top-center" />
     </div>
   );
 };

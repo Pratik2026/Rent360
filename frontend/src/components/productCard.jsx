@@ -9,9 +9,11 @@ export const ProductCard = (props) => {
 
   const [wishlist, setwishlist] = useState(false);
 
+  const id = props.id;
+  console.log(id);
   const handleClick = () => {
     console.log("clicked");
-    navigate("/products/product");
+    navigate(`/products/product/${id}`);
   };
 
   const handleWishlistClick = () => {

@@ -9,17 +9,73 @@ import Footer from "../components/footer.jsx";
 import { Calendar, MapPin, Package } from "phosphor-react";
 import { Button } from "keep-react";
 import { RatingComponent } from "./rating.jsx";
-import Topdeals from "../components/topdeals.jsx";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("products");
+  };
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  function selectFourNumbers(val) {
+    const selectedNumbers = new Set();
+
+    while (selectedNumbers.size < 4) {
+      const randomNum = getRandomInt(val);
+      selectedNumbers.add(randomNum);
+    }
+
+    return Array.from(selectedNumbers);
+  }
+
+  
+
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post("http://localhost:7000/products", {});
+
+        if (
+          response.data &&
+          Array.isArray(response.data) &&
+          response.data.length > 0
+        ) {
+          const val = response.data.length; 
+          const fourNumbers = selectFourNumbers(val);
+          setProducts([
+            response.data[fourNumbers[0]],
+            response.data[fourNumbers[1]],
+            response.data[fourNumbers[2]],
+            response.data[fourNumbers[3]],
+          ]);
+        } else {
+          console.log("No products found in the response.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Now you can safely use products here
+    if (products.length > 0) {
+      console.log(products[0].title);
+    }
+  }, [products]);
+
   return (
     <>
       <Navbar />
-
-      <section
-        className="text-image flex justify-between mt-20"
-        id="home"
-      >
+      <section className="text-image flex justify-between mt-20" id="home">
         <div className="flex flex-col xl:ml-20 md:ml-10 gap-16 w-1/3 my-24">
           <div className="text flex flex-col gap-4">
             <div className=" xl:text-[52px] lg:text-[30px] sm:text-[20px] font-bold tracking-wider">
@@ -27,10 +83,18 @@ const Home = () => {
               rent anything?
             </div>
             <p className="text-md lg:text-sm text-textcolor font-medium">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Magni maiores, ducimus quibusdam temporibus aliquid
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <br /> Magni maiores, ducimus quibusdam temporibus aliquid
             </p>
           </div>
-          <Button type="primary" size="lg" color="success" href="/products" >Try it Out!</Button>
+          <Button
+            type="primary"
+            size="lg"
+            color="success"
+            onClick={handleClick}
+          >
+            Try it Out!
+          </Button>
         </div>
         <div className="w-2/3 h-full my-8">
           <CarouselComponent />
@@ -75,7 +139,36 @@ const Home = () => {
         </div>
       </section>
 
-      <Topdeals />
+      <section
+        className="services flex flex-col justify-center items-center gap-10 my-10"
+        id="services"
+      >
+        <div className="heading flex flex-col justify-center items-center gap-4">
+          <span className="text-lg font-semibold text-custom_primary">
+            Best Services
+          </span>
+          <div className="text-[32px] font-bold text-center">
+            Explore Our Top Deals
+          </div>
+        </div>
+        <div className="services-container flex justify-center items-center gap-16 flex-wrap">
+          <div className="services-container flex justify-center items-center gap-16 flex-wrap">
+            {products.length > 0 ? (
+              products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  img={product.product_image_url}
+                  price={`Rs ${product.price}`}
+                  title={product.title}
+                />
+              ))
+            ) : (
+              <p>No products found</p>
+            )}
+          </div>
+        </div>
+      </section>
 
       <section
         className="about flex flex-col justify-center items-center gap-10 mt-10 bg-[#E8EAF6] py-5"
@@ -89,7 +182,7 @@ const Home = () => {
         </div>
         <div className="about-container flex justify-end items-center">
           <div className="about-img  w-1/3 flex justify-center">
-            <img src={about} alt="" className="h-72"/>
+            <img src={about} alt="" className="h-72" />
           </div>
           <div className="about-text flex flex-col gap-4 w-2/3">
             <span className="text-custom_primary font-medium">ABOUT US</span>
@@ -101,7 +194,10 @@ const Home = () => {
             </p>
             <p className="text-left">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ad
-              ratione iste quibusdam praesentium ipsa vel tenetur autem? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo veniam perferendis illum eum dolor consequatur, doloremque sapiente rerum ea esse.
+              ratione iste quibusdam praesentium ipsa vel tenetur autem? Lorem
+              ipsum dolor sit, amet consectetur adipisicing elit. Quo veniam
+              perferendis illum eum dolor consequatur, doloremque sapiente rerum
+              ea esse.
             </p>
             <a
               href="#"
