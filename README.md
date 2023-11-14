@@ -1,8 +1,8 @@
-Rent360
+# Rent360
 
 Rent360 is a web platform that facilitates renting items, allowing users to both list items for rent and rent items from others. The platform enables users to create listings, manage their inventory, view available items for rent, add items to a wishlist, and more.
 
-Features
+# Features
 
 User Authentication: Users can create accounts, log in, and manage their profiles.
 Listings: Users can create listings for items they want to rent out.
@@ -11,16 +11,16 @@ Wishlist: Users can add items to their wishlist for future reference.
 Inventory Management: Users can manage their listed items and update their availability.
 Renting Process: Facilitates the process of renting items by connecting renters and owners.
 User Reviews: Enable users to leave reviews and ratings for rented items or other users.
-Technologies Used
+
+# Technologies Used
 Frontend: HTML, CSS, JavaScript, React.js
-Backend: Node.js, Express.js
+Backend: Node.js
 Database: MySql
 APIs: Integration with Google Maps API for location-based services.
 Other Tools: Axios for HTTP requests, JSON Web Tokens for authentication, etc.
 
-Getting Started
+# Getting Started
 Clone the repository:
-
 bash
 Copy code
 git clone https://github.com/yourusername/Rent360.git
