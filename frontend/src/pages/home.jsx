@@ -4,6 +4,7 @@ import c1 from "../assets/c1.png";
 import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.png";
 import about from "../assets/about.jpg";
+import { ProductCard } from "../components/productCard.jsx";
 import { CarouselComponent } from "../components/carousel.jsx";
 import Footer from "../components/footer.jsx";
 import { Calendar, MapPin, Package } from "phosphor-react";
