@@ -12,7 +12,7 @@ const PopoverContent = () => {
       </div>
       <div className="flex gap-4 hover:outline rounded-md hover:outline-custom_primary hover:outline-2 py-2 text-textcolor font-medium">
         <Heart size={20} fontWeight="bold" />
-        <p>Wishlist</p>
+        <a href="wishlist">Wishlist</a>
       </div>
       <hr />
       <div className="flex gap-4 hover:outline rounded-md hover:outline-custom_primary hover:outline-2 py-2 text-textcolor font-medium">

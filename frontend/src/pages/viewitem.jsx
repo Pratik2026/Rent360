@@ -1,9 +1,15 @@
+"use client";
+
 import { CarouselComponent } from "../components/carousel";
 import { Chat, Phone } from "phosphor-react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { Badge } from "keep-react";
+import { useState } from "react";
 
 function View() {
+  const [Itemstatus, setItemStatus] = useState("Available");
+
   return (
     <div>
       <Navbar />
@@ -35,9 +41,26 @@ function View() {
           <div className="right-section w-full md:w-1/3 flex flex-col my-16 gap-8 md:mt-0">
             <div className="pricecard border border-gray-100 h-48 flex flex-col justify-around p-4 mr-4 bg-white rounded-md">
               <div className="price font-bold text-8xl">Rs.1000 </div>
+              <div className="w-16 flex gap-4">
+                <Badge size="sm" colorType="light" color="gray">
+                  Status
+                </Badge>
+                <Badge
+                  size="sm"
+                  colorType="light"
+                  color={Itemstatus == "Available" ? "success" : "error"}
+                >
+                  {Itemstatus}
+                </Badge>
+              </div>
+
               <div className="bottom flex justify-between">
                 <p className="address">Lorem ipsum dolor sit amet.</p>
-                <span>26 Oct</span>
+                <span>
+                  <Badge size="sm" colorType="light" color="gray">
+                    26 Oct
+                  </Badge>
+                </span>
               </div>
             </div>
             <div className="ownerdetail h-48 border border-gray-100 flex flex-col justify-center items-center gap-4 mr-4 bg-white rounded-md">

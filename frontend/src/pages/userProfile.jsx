@@ -11,8 +11,13 @@ const userProfile = () => {
       <div className="mx-40 my-20 flex  items-center gap-4 ">
         <ProfileCard />
         <div className="display_box flex flex-col justify-center items-center w-full">
-            <EmptyComponent />
-            <Button size="md" href="/sellform" color="info">Start Selling</Button>
+          <EmptyComponent
+            title="OOPS! Looks like you haven't listed anything yet."
+            content="Let go what you don't find useful anymore."
+          />
+          <Button size="md" href="/sellform" color="info">
+            Start Selling
+          </Button>
         </div>
       </div>
       <Footer />

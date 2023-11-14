@@ -24,7 +24,7 @@ const Home = () => {
           <div className="text flex flex-col gap-4">
             <div className=" xl:text-[52px] lg:text-[30px] sm:text-[20px] font-bold tracking-wider">
               <span className="text-custom_primary ">Looking </span> to <br />
-              rent anthing?
+              rent anything?
             </div>
             <p className="text-md lg:text-sm text-textcolor font-medium">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Magni maiores, ducimus quibusdam temporibus aliquid
@@ -32,7 +32,7 @@ const Home = () => {
           </div>
           <Button type="primary" size="lg" color="success" href="/products" >Try it Out!</Button>
         </div>
-        <div className="w-2/3 h-full my-4">
+        <div className="w-2/3 h-full my-8">
           <CarouselComponent />
         </div>
       </section>
@@ -41,7 +41,7 @@ const Home = () => {
         className="rent flex flex-col justify-center items-center gap-10 mt-10 mb-20"
         id="rent"
       >
-        <div className="heading flex flex-col justify-center items-center gap-4">
+        <div className="heading flex flex-col justify-center items-center gap-4 ">
           <span className="text-lg font-semibold text-custom_primary">
             How It Work's
           </span>

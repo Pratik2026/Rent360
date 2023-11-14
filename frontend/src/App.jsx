@@ -7,6 +7,7 @@ import SellForm from "./pages/sellForm.jsx";
 import View from "./pages/viewitem.jsx";
 import UserProfile from "./pages/userProfile.jsx";
 import { NotFound } from "./components/notfound.jsx";
+import { Wishlist } from "./pages/wishlist.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="sellform" element={<SellForm />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/not-found" element={<NotFound />} />
+        <Route path="/wishlist" element={<Wishlist />} />
 
       </Routes>
     </BrowserRouter>

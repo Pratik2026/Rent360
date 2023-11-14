@@ -12,9 +12,13 @@ const Navbar = () => {
   return (
     <div>
       <div className="navbar flex justify-around items-center h-20 bg-[#ffffff] shadow-md fixed top-0 z-10 w-screen">
-        <img src={logo} alt="" className="h-16 my-2 rounded-md"/>
+        <a href="/">
+          <img src={logo} alt="" className="h-16 my-2 rounded-md" />
+        </a>
 
-        <div><Location /></div>
+        <div>
+          <Location />
+        </div>
         <div className="search-bar w-1/2">
           <SearchBarComponent />
         </div>
