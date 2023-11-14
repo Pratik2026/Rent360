@@ -5,7 +5,6 @@ import { Chat, Phone } from "phosphor-react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Badge } from "keep-react";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
