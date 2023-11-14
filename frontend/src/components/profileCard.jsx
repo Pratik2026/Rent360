@@ -8,7 +8,7 @@ export const ProfileCard = () => {
     <Card
       imgSrc="https://images.prismic.io/staticmania/821cee7b-6b44-48c4-ab95-8a525056489d_blog.jpg?auto=compress,format"
       imgSize="md"
-      className="max-w-xs mt-10 opacity-0"
+      className="max-w-xs mt-10"
     >
       <Card.Container className="flex flex-col justify-center">
         <Card.Container className="absolute top-32 left-1/2 transform -translate-x-1/2  rounded-full ring-4 ring-white ring-offset-0 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
