@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home";
-import Rent from "./pages/rent";
+import PaymentPage from "./pages/paymentPage.jsx";
 import Products from "./pages/Products.jsx";
 import SellForm from "./pages/sellForm.jsx";
 import View from "./pages/viewitem.jsx";
@@ -13,13 +13,12 @@ import { Register } from "./pages/register.jsx";
 import FilteredProducts from "./pages/filteredProduct.jsx";
 import { Chat } from "./pages/chat.jsx";
 
-
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/rent" element={<Rent />} />
+        <Route path="/" element={<Home />} />
+        <Route path="paymentPage" element={<PaymentPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/product/:id" element={<View />} />
         <Route path="/sellform" element={<SellForm />} />
@@ -31,7 +30,6 @@ function App() {
         <Route path="/search/:category" element={<FilteredProducts />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
         <Route path="/chat" element={<Chat />} />
-
       </Routes>
     </BrowserRouter>
   );
