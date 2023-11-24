@@ -2,12 +2,13 @@
 import { Heart } from "phosphor-react";
 import { Badge, Button, Card } from "keep-react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const ProductCard = (props) => {
   const navigate = useNavigate();
 
-  const [wishlist, setwishlist] = useState(false);
+  const [wishStatus, setWishStatus] = useState(false);
 
   const id = props.id;
   console.log(id);
@@ -16,9 +17,37 @@ export const ProductCard = (props) => {
     navigate(`/products/product/${id}`);
   };
 
-  const handleWishlistClick = () => {
-    setwishlist(!wishlist)
-  }
+    const userid = localStorage.getItem("userid");
+
+    const handleWish = async () => {
+      const response = await axios.post("http://localhost:7000/addWish", {
+        userid,
+        id,
+      });
+      console.log(response.data.status);
+      console.log("above");
+      if (response.data.status === true) {
+        console.log("true");
+        setWishStatus(true);
+      }
+      else {
+        console.log("false");
+        setWishStatus(false);
+      }
+    };
+
+    useEffect(() => {
+      const wishChecker = async () => {
+        const response = await axios.post("http://localhost:7000/checkWish", {
+          userid,
+          id,
+        });
+        if (response.data.status === true) {
+          setWishStatus(true);
+        }
+      };
+      wishChecker();
+    }, [userid, id]);
 
   return (
     <>
@@ -28,7 +57,7 @@ export const ProductCard = (props) => {
         imgSize="md"
       >
         <Card.Container className="absolute top-3.5 right-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-50/50">
-          <Heart size={20} weight="bold" color={wishlist ? "red" : "white"} onClick={handleWishlistClick} />
+          <Heart size={20} weight="bold" color={wishStatus ? "red" : "white"} onClick={handleWish} />
         </Card.Container>
         <Card.Container className="p-6">
           <Card.Container className="flex items-center justify-between">

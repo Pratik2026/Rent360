@@ -26,7 +26,7 @@ const Home = () => {
   function selectFourNumbers(val) {
     const selectedNumbers = new Set();
 
-    while (selectedNumbers.size < 4) {
+    while (selectedNumbers.size < 8) {
       const randomNum = getRandomInt(val);
       selectedNumbers.add(randomNum);
     }
@@ -52,6 +52,10 @@ const Home = () => {
             response.data[fourNumbers[1]],
             response.data[fourNumbers[2]],
             response.data[fourNumbers[3]],
+            response.data[fourNumbers[4]],
+            response.data[fourNumbers[5]],
+            response.data[fourNumbers[6]],
+            response.data[fourNumbers[7]],
           ]);
         } else {
           console.log("No products found in the response.");
