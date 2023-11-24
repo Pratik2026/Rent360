@@ -217,7 +217,7 @@ const Home = () => {
         id="reviews"
       >
         <div className="heading flex flex-col justify-center items-center gap-4">
-          <span className="text-lg font-medium">Reviews</span>
+          <span className="text-lg font-medium text-custom_primary">Reviews</span>
           <div className="text-3xl font-bold text-center">
             What Our Customers Say
           </div>
