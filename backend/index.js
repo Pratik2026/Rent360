@@ -191,19 +191,99 @@ app.post("/filteredproducts", (req, res) => {
     });
 });
 
+app.post("/showMyProducts", (req, res) => {
+    const sqlCheck = "SELECT * FROM product WHERE userid=?";
+    const valuesCheck = [
+        req.body.userid
+    ];
+
+    db.query(sqlCheck, valuesCheck, (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.json({ message: "Error getting products. Try later", status: false });
+        }
+
+        if (data.length > 0) {
+            console.log(data);
+            console.log('yes');
+            return res.json( data );
+        } else {
+            data = [];
+            return res.json({ data });
+        }
+    });
+});
+
+
+app.post("/showWishlist", (req, res) => {
+    const sqlCheck = "SELECT * FROM wishlist where userid=?";
+    const valuesCheck = [
+        req.body.userid
+    ];
+
+    db.query(sqlCheck, valuesCheck, (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.json({ message: "Error getting products. Try later", status: false });
+        }
+
+        if (data.length > 0) {
+            let a = [];
+            let i = 0;
+            while (i < data.length) {
+                a.push(data[i].id)
+                i+=1;
+            }
+            const sqlCheck2 = "SELECT * FROM product WHERE id IN (?)"
+            const valuesCheck2 = [a]
+            db.query(sqlCheck2, valuesCheck2, (err, data2) => {
+                return res.json(data2);
+            });
+            
+        } else {
+            data = [];
+            return res.json({ data });
+        }
+    });
+});
+
 app.post('/addWish', (req, res) => {
     const sqlCheck = "INSERT INTO wishlist (userid, id) VALUES (?,?)";
     const valuesCheck = [req.body.userid, req.body.id];
-    console.log(valuesCheck);
-    db.query(sqlCheck, valuesCheck, (insertErr, insertData) => {
-                if (insertErr) {
-                    console.error(insertErr);
-                    return res.json({ message: "Product already in wishlist", status: false });
-                }
+    const sqlCheck2 = "SELECT * FROM wishlist where userid=? and id=?";
+    const valuesCheck2 = [req.body.userid, req.body.id];
+    let object = false;
+    db.query(sqlCheck2, valuesCheck2, (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.json({ message: "Error getting products details. Try later", status: false });
+        }
 
-                console.log(insertData);
+        if (data.length > 0) {
+            object = true;
+        }
+
+        db.query(sqlCheck, valuesCheck, (insertErr, insertData) => {
+            if (insertErr) {
+                console.log(insertErr);
+                return res.json({ message: "Error adding product to wishlist", status: false });
+            }
+
+            if (object) {
+                const sqlDelete = "DELETE FROM wishlist WHERE userid = ? AND id = ?";
+                const valuesDelete = [req.body.userid, req.body.id];
+                db.query(sqlDelete, valuesDelete, (deleteErr, deleteData) => {
+                    if (deleteErr) {
+                        console.log(deleteErr);
+                        return res.json({ message: "Error removing product from wishlist", status: false });
+                    }
+                    return res.json({ message: "Product removed from wishlist", status: false });
+                });
+            } else {
                 return res.json({ message: "Product added to wishlist!", status: true, data: insertData });
-            });
+            }
+        });
+    });
 });
 
 app.post('/checkWish', (req, res) => {
@@ -218,7 +298,6 @@ app.post('/checkWish', (req, res) => {
         if (data.length > 0) {
             return res.json( {status:true, data} );
         } else {
-            data = [];
             return res.json({status:false, data} );
         }
     });
