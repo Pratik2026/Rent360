@@ -51,7 +51,11 @@ function View() {
     console.log(response.data.status);
     console.log("above");
     if (response.data.status === true) {
-      setWishStatus("ALREADY IN WISHLIST");
+      console.log("added")
+      setWishStatus("ADDED TO WISHLIST");
+    }
+    else {
+      setWishStatus("ADD TO WISHLIST");
     }
   }
 
@@ -62,14 +66,11 @@ function View() {
         id,
       });
       if (response.data.status === true) {
-        alert(response.data.message);
         setWishStatus("ALREADY IN WISHLIST");
-      } else {
-        alert(response.data.message);
       }
     };
     wishChecker();
-  }, [userid, id]);
+  },[userid,id]);
 
 
 

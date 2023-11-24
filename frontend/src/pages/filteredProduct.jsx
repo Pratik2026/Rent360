@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
 
 const FilteredProducts = () => {
     const [products, setProducts] = useState([]);
-    const { category } = useParams();
+  const { category } = useParams();
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
