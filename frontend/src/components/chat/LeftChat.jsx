@@ -1,4 +1,4 @@
-import "./chat.css"
+// import "./chat.css"
 import user from "../../assets/user.jpg";
 import c1 from "../../assets/c1 copy.png";
 

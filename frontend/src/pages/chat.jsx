@@ -1,5 +1,6 @@
 import { Leftside } from "../components/chat/LeftChat"
 import { Rightside } from "../components/chat/RightChat"
+import "./chat.css";
 
 export const Chat = () => {
     return (

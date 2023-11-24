@@ -13,19 +13,19 @@ const Navbar = () => {
   const [name, setName] = React.useState("");
   const [userid, setUserid] = React.useState("")
   const [message, setMessage] = React.useState("");
-  const [data, setData] = React.useState([]);
+  
 
   const navigate = useNavigate();
+  // let a = "";
 
   const handleKeyDown = (event) => {
     console.log("Key pressed:", event.key);
     if (event.key === "Enter") {
       console.log("Inside Enter condition");
-      if (data.length > 0) {
         console.log("pressed");
-        const enteredValue = data[0].name.toLowerCase();
+        const enteredValue = event.target.value
         navigate(`/search/${enteredValue}`);
-      }
+        a = '';
     }
   };
 
