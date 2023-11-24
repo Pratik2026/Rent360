@@ -6,14 +6,28 @@ import { SearchBarComponent } from "./search.jsx";
 import { ButtonComponent } from "./sellbutton.jsx";
 import { Location } from "./location.jsx";
 import axios from "axios";
-
-
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [loginstatus, setLoginStatus] = React.useState(false);
   const [name, setName] = React.useState("");
   const [userid, setUserid] = React.useState("")
   const [message, setMessage] = React.useState("");
+  const [data, setData] = React.useState([]);
+
+  const navigate = useNavigate();
+
+  const handleKeyDown = (event) => {
+    console.log("Key pressed:", event.key);
+    if (event.key === "Enter") {
+      console.log("Inside Enter condition");
+      if (data.length > 0) {
+        console.log("pressed");
+        const enteredValue = data[0].name.toLowerCase();
+        navigate(`/search/${enteredValue}`);
+      }
+    }
+  };
 
   useEffect(() => {
     const storedLoginStatus = localStorage.getItem("loginstatus");
@@ -59,7 +73,7 @@ const Navbar = () => {
         <div>
           <Location />
         </div>
-        <div className="search-bar w-1/2">
+        <div className="search-bar w-1/2" onKeyDown={handleKeyDown}>
           <SearchBarComponent />
         </div>
 

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Dropdown, SearchBar } from "keep-react";
 import { ArrowRight, MagnifyingGlass } from "phosphor-react";
-import { useNavigate } from "react-router-dom";
 
 const books = [
   { id: 1, name: "To Kill a Mockingbird" },
@@ -17,11 +16,9 @@ const books = [
   { id: 10, name: "Brave New World" },
 ];
 
-// Import necessary components and hooks
 
 export const SearchBarComponent = () => {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
 
   const handleOnChange = (event) => {
     const searchTerm = event.target.value.toLowerCase();
@@ -36,25 +33,12 @@ export const SearchBarComponent = () => {
     }
   };
 
-  const handleKeyDown = (event) => {
-    console.log("Key pressed:", event.key);
-    if (event.key === "Enter") {
-      console.log("Inside Enter condition");
-      if (data.length > 0) {
-        console.log("pressed");
-        const enteredValue = data[0].name.toLowerCase();
-        navigate(`/search/${enteredValue}`);
-      }
-    }
-  };
-
   return (
     <SearchBar
       placeholder="Find anything you would like to rent..."
       addon={<MagnifyingGlass size={20} color="#002F34" />}
       addonPosition="left"
       onChange={handleOnChange}
-      onKeyDown={handleKeyDown}
       size="md"
     >
       <ul>
