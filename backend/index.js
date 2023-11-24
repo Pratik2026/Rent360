@@ -191,15 +191,39 @@ app.post("/filteredproducts", (req, res) => {
     });
 });
 
+app.post('/addWish', (req, res) => {
+    const sqlCheck = "INSERT INTO wishlist (userid, id) VALUES (?,?)";
+    const valuesCheck = [req.body.userid, req.body.id];
+    console.log(valuesCheck);
+    db.query(sqlCheck, valuesCheck, (insertErr, insertData) => {
+                if (insertErr) {
+                    console.error(insertErr);
+                    return res.json({ message: "Product already in wishlist", status: false });
+                }
 
-app.get('/chat', (req, res) => {
-    const sql = 'SELECT * from messages where sender_id = "RameshBabuAsh" or receiver_id = "RameshBabuAsh";';
-    db.query(sql, (err, data) => {
-        if (err) return res.json(err);
-        console.log(data);
-        return res.json(data);
-    })
+                console.log(insertData);
+                return res.json({ message: "Product added to wishlist!", status: true, data: insertData });
+            });
+});
+
+app.post('/checkWish', (req, res) => {
+    const sqlCheck = 'SELECT * FROM wishlist WHERE userid=? and id=?';
+    const valuesCheck = [req.body.userid, req.body.id];
+    db.query(sqlCheck, valuesCheck, (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.json({ message: "Error getting products details. Try later", status: false });
+        }
+
+        if (data.length > 0) {
+            return res.json( {status:true, data} );
+        } else {
+            data = [];
+            return res.json({status:false, data} );
+        }
+    });
 })
+
 
 app.listen(7000, 'localhost', () => {
     console.log("Server is running on http://localhost:7000/");
