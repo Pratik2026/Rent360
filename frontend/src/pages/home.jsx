@@ -34,8 +34,6 @@ const Home = () => {
     return Array.from(selectedNumbers);
   }
 
-  
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +45,7 @@ const Home = () => {
           Array.isArray(response.data) &&
           response.data.length > 0
         ) {
-          const val = response.data.length; 
+          const val = response.data.length;
           const fourNumbers = selectFourNumbers(val);
           setProducts([
             response.data[fourNumbers[0]],
@@ -97,7 +95,7 @@ const Home = () => {
             Try it Out!
           </Button>
         </div>
-        <div className="w-2/3 h-full my-8">
+        <div className="w-2/3 my-8 self self-center">
           <CarouselComponent />
         </div>
       </section>
@@ -113,7 +111,7 @@ const Home = () => {
           <div className="text-3xl font-bold">Rent with 3 Easy Steps</div>
         </div>
         <div className="rent-container flex justify-center items-center w-screen gap-10">
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <MapPin size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Choose A Location</div>
             <p className="text-center mx-5 w-2/3">
@@ -121,7 +119,7 @@ const Home = () => {
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <Calendar size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Pick-Up Date</div>
             <p className="text-center mx-5 w-2/3">
@@ -129,7 +127,7 @@ const Home = () => {
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-lg w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+          <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <Package size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Rent An Item</div>
             <p className="text-center mx-5 w-2/3">
@@ -202,7 +200,7 @@ const Home = () => {
             </p>
             <a
               href="#"
-              className="btn w-fit font-medium text-white px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-custom_primary"
+              className="btn w-fit font-medium text-white px-4 py-1 header-btn bg-custom_primary rounded-md transition-colors duration-500 hover:bg-custom_primary"
             >
               Learn More
             </a>

@@ -14,7 +14,7 @@ const SellForm = () => {
     price: "",
     address: "",
     seller_mobile_number: "",
-    product_image_url: ""
+    product_image_url: "",
   });
 
   const handleChange = (e) => {
@@ -26,39 +26,49 @@ const SellForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { title, description, price, address, seller_mobile_number, product_image_url } = product;
+    const {
+      title,
+      description,
+      price,
+      address,
+      seller_mobile_number,
+      product_image_url,
+    } = product;
     const userid = localStorage.getItem("userid");
 
-        const response = await axios.post('http://localhost:7000/addProduct', {
-        title,
-        description,
-        price,
-        address,
-        seller_mobile_number,
-        product_image_url,
-        userid
-        });
+    const response = await axios.post("http://localhost:7000/addProduct", {
+      title,
+      description,
+      price,
+      address,
+      seller_mobile_number,
+      product_image_url,
+      userid,
+    });
 
     const data = response.data;
     console.log("1");
 
     if (data.status === false) {
-          console.log("2");
-        toast.error(data.message, toastOptions);
-        }
+      console.log("2");
+      toast.error(data.message, toastOptions);
+    }
 
     if (data.status === true) {
-        console.log("3");
+      console.log("3");
       // toast.success(data.message, toastOptions);
-        alert("added to cart");
-        setTimeout(() => navigate("/"), 1000);
-        }
+      alert("added to cart");
+      setTimeout(() => navigate("/"), 1000);
+    }
     console.log("Form submitted:", product);
   };
 
   return (
     <div>
-      <form className="max-w-2xl mx-auto mt-8" onSubmit={handleSubmit}>
+      <form
+        className="max-w-2xl mx-auto mt-8 bg-slate-100 p-4 rounded-lg"
+        onSubmit={handleSubmit}
+      >
         <div className="text-center text-2xl font-semibold mb-8">
           POST YOUR PRODUCT
         </div>
@@ -165,7 +175,7 @@ const SellForm = () => {
 
         <div className="flex items-center justify-between mt-8">
           <button
-            className="w-full bg-red-500 hover:bg-custom_primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="w-full bg-custom_primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             POST NOW

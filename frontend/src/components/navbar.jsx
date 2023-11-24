@@ -4,16 +4,14 @@ import logo from "../assets/logo.jpeg";
 import { AvatarComponent } from "./Avatar.jsx";
 import { SearchBarComponent } from "./search.jsx";
 import { ButtonComponent } from "./sellbutton.jsx";
-import { Location } from "./location.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [loginstatus, setLoginStatus] = React.useState(false);
   const [name, setName] = React.useState("");
-  const [userid, setUserid] = React.useState("")
+  const [userid, setUserid] = React.useState("");
   const [message, setMessage] = React.useState("");
-  
 
   const navigate = useNavigate();
   // let a = "";
@@ -22,10 +20,10 @@ const Navbar = () => {
     console.log("Key pressed:", event.key);
     if (event.key === "Enter") {
       console.log("Inside Enter condition");
-        console.log("pressed");
-        const enteredValue = event.target.value
-        navigate(`/search/${enteredValue}`);
-        a = '';
+      console.log("pressed");
+      const enteredValue = event.target.value;
+      navigate(`/search/${enteredValue}`);
+      a = "";
     }
   };
 
@@ -48,8 +46,9 @@ const Navbar = () => {
   }, [loginstatus, name, userid]);
 
   useEffect(() => {
-    axios.get('http://localhost:7000')
-      .then(res => {
+    axios
+      .get("http://localhost:7000")
+      .then((res) => {
         if (res.data.status === true) {
           console.log(res.data);
           setName(res.data.name);
@@ -57,7 +56,7 @@ const Navbar = () => {
           setUserid(res.data.userid);
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching user data:", error);
         setLoginStatus(false);
       });
@@ -70,9 +69,6 @@ const Navbar = () => {
           <img src={logo} alt="" className="h-16 my-2 rounded-md" />
         </a>
 
-        <div>
-          <Location />
-        </div>
         <div className="search-bar w-1/2" onKeyDown={handleKeyDown}>
           <SearchBarComponent />
         </div>
@@ -85,7 +81,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <span className="mr-20 px-4 py-1 header-btn bg-red-500 rounded-md transition-colors duration-500 hover:bg-custom_primary">
+          <span className="h-[2.8rem] px-4 py-1 header-btn bg-custom_primary rounded-md transition-colors duration-500 hover:bg-custom_primary">
             <a href="/login" className=" text-white text-xl ">
               Login
             </a>

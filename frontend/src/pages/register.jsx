@@ -4,51 +4,51 @@ import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-    const navigate = useNavigate();
-    const toastOptions = {
+  const navigate = useNavigate();
+  const toastOptions = {
     position: "top-center",
     duration: 1000,
   };
-    const [formval, setFormval] = React.useState({
+  const [formval, setFormval] = React.useState({
     userid: "",
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
-    phone: ""
-    });
+    phone: "",
+  });
 
-    const handleChange = (e) => {
-        setFormval({ ...formval, [e.target.name]: e.target.value });
-    };
+  const handleChange = (e) => {
+    setFormval({ ...formval, [e.target.name]: e.target.value });
+  };
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (handleValidation()) {
-        const { userid, name, password, email, phone } = formval;
+      const { userid, name, password, email, phone } = formval;
 
-        const response = await axios.post('http://localhost:7000/register', {
+      const response = await axios.post("http://localhost:7000/register", {
         userid,
         name,
         phone,
         password,
         email,
-        });
+      });
 
-        const data = response.data;
+      const data = response.data;
 
-        if (data.status === false) {
+      if (data.status === false) {
         toast.error(data.message, toastOptions);
-        }
+      }
 
-        if (data.status === true) {
+      if (data.status === true) {
         toast.success(data.message, toastOptions);
         setTimeout(() => navigate("/login"), 1000);
-        }
+      }
     }
-    };
-    const handleValidation = () => {
+  };
+  const handleValidation = () => {
     const { userid, name, password, confirmPassword, email, phone } = formval;
 
     if (password !== confirmPassword) {
@@ -71,7 +71,10 @@ const Register = () => {
       return false;
     }
     if (phone.length < 10) {
-      toast.error("Phone number must be at least 10 digits long!", toastOptions);
+      toast.error(
+        "Phone number must be at least 10 digits long!",
+        toastOptions
+      );
       return false;
     }
     if (password.length < 6) {
@@ -79,11 +82,10 @@ const Register = () => {
       return false;
     }
     return true;
-    };
+  };
 
-
-    return (
-        <div className="bg-[#f9fafb] flex gap-8 flex-col justify-center items-center min-h-screen min-w-screen">
+  return (
+    <div className="bg-[#f9fafb] flex gap-8 flex-col justify-center items-center min-h-screen min-w-screen">
       <div className="text-3xl font-semibold">Register Your Account</div>
       <div className="p-8 bg-slate-100 shadow-md rounded-md flex flex-col items-center">
         <form
@@ -101,9 +103,9 @@ const Register = () => {
             id="username"
             className="px-2 w-full border-2 rounded-md outline-2 py-1.5 focus:outline-indigo-600"
             onChange={(e) => handleChange(e)}
-            />
-            
-            <label htmlFor="name" className="font-medium">
+          />
+
+          <label htmlFor="name" className="font-medium">
             Name
           </label>
           <input
@@ -124,7 +126,7 @@ const Register = () => {
             className="px-2 w-full border-2 rounded-md outline-2 py-1.5 focus:outline-indigo-600"
             onChange={(e) => handleChange(e)}
           />
-            
+
           <label htmlFor="phone" className="font-medium">
             Phone
           </label>
@@ -160,7 +162,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="w-full mt-4 bg-[#4f46e5] text-white font-medium rounded-md outline-2 py-1.5 hover:bg-indigo-500"
+            className="w-full mt-4 bg-custom_primary text-white font-medium rounded-md outline-2 py-1.5 hover:bg-indigo-500"
           >
             Register
           </button>
@@ -169,7 +171,7 @@ const Register = () => {
             <span className=" text-gray-700">Already have an account?</span>
             <a
               href="/login"
-              className=" text-violet-700 font-semibold cursor-pointer"
+              className=" text-custom_primary font-semibold cursor-pointer"
             >
               Login
             </a>
@@ -178,8 +180,6 @@ const Register = () => {
       </div>
       <Toaster position="top-center" />
     </div>
-    );
-}
-export {Register};
-
-
+  );
+};
+export { Register };

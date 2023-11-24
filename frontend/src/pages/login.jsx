@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import google from "../assets/Google.png";
 
 const Login = () => {
-    const navigate = useNavigate();
-    
-    const [auth, setAuth] = useState(false);
-    const [name, setName] = useState("");
+  const navigate = useNavigate();
+
+  const [auth, setAuth] = useState(false);
+  const [name, setName] = useState("");
   const [userid, setUserid] = useState("");
 
   const [values, setValues] = React.useState({
@@ -22,16 +23,16 @@ const Login = () => {
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-};
+  };
 
-const handleSubmit = async (e) => {
-e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     const { userid, password } = values;
     axios.defaults.withCredentials = true;
 
     if (handleValidation()) {
-      const { data } = await axios.post('http://localhost:7000/login', {
+      const { data } = await axios.post("http://localhost:7000/login", {
         userid,
         password,
       });
@@ -69,12 +70,12 @@ e.preventDefault();
   };
   return (
     <div className="bg-[#f9fafb] flex gap-8 flex-col justify-center items-center min-h-screen min-w-screen">
-      <div className="text-3xl font-semibold">Welcome to ChatterBox!</div>
+      <div className="text-3xl font-semibold">Welcome to Rent360</div>
       <div className="p-8 bg-slate-100 shadow-md rounded-md flex flex-col items-center">
         <form
           method="post"
           className="w-96 flex flex-col gap-4"
-          onSubmit={(e) => handleSubmit(e) }
+          onSubmit={(e) => handleSubmit(e)}
         >
           <label htmlFor="userid" className="font-medium text-gray-700">
             Username
@@ -100,23 +101,24 @@ e.preventDefault();
 
           <button
             type="submit"
-            className="w-full mt-4 bg-[#4f46e5] text-white font-medium text-lg  rounded-md outline-2 py-1.5 hover:bg-indigo-500"
+            className="w-full mt-4 bg-custom_primary text-white font-medium text-lg  rounded-md outline-2 py-1.5 hover:bg-indigo-500"
           >
             Login
           </button>
 
           <div className="flex gap-2 justify-between">
-          <div className="text-violet-700 font-semibold cursor-pointer">Forgot Password?</div>
-            <div>
-            <span className=" text-gray-700 mr-2">Didn't sign up?</span>
-            <a
-              href="/register"
-              className=" text-violet-700 font-semibold cursor-pointer"
-            >
-              Register
-            </a>
+            <div className="text-custom_primary font-semibold cursor-pointer">
+              Forgot Password?
             </div>
-           
+            <div>
+              <span className=" text-gray-700 mr-2">Didn't sign up?</span>
+              <a
+                href="/register"
+                className=" text-custom_primary font-semibold cursor-pointer"
+              >
+                Register
+              </a>
+            </div>
           </div>
           <div className="flex justify-center items-center gap-4">
             <hr className=" w-28 "></hr>
@@ -129,9 +131,9 @@ e.preventDefault();
           <div>
             <button
               type="submit"
-              className="w-full mt-4 bg-gray-800 text-white font-medium rounded-md outline-2 py-1.5 hover:bg-gray-700 flex justify-center items-center gap-2"
+              className="w-full mt-4 bg-custom_primary text-white font-medium rounded-md outline-2 py-1.5 hover:bg-gray-700 flex justify-center items-center gap-2"
             >
-              <img src="./google.svg" alt="google-icon" className="w-6" />
+              <img src={google} alt="google-icon" className="w-6" />
               <span>Login With Google</span>
             </button>
           </div>
@@ -142,4 +144,4 @@ e.preventDefault();
   );
 };
 
-export {Login};
+export { Login };

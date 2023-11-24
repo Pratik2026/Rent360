@@ -4,7 +4,6 @@ import { Calendar, EnvelopeSimple } from "phosphor-react";
 import c1 from "../assets/c1.png";
 
 export const ProfileCard = () => {
-
   const userid = localStorage.getItem("userid");
   const name = localStorage.getItem("name");
 
@@ -26,20 +25,25 @@ export const ProfileCard = () => {
         <Card.Container className="mt-10 mb-3 ml-5">
           <Card.Title className="text-md md:text-base font-semibold text-slate-800">
             Name : {name} <br></br>
-            Username : {userid} 
+            Username : {userid}
           </Card.Title>
         </Card.Container>
-        
+
         <Card.Container className="ml-5">
           <Card.Title className="text-xs font-semibold text-slate-800">
-            user verified with
-            <EnvelopeSimple size={20} weight="bold" />
+            User verified with <EnvelopeSimple size={20} weight="bold" />
           </Card.Title>
         </Card.Container>
-        
+
         <Card.Container className="flex w-full justify-between border-t border-t-slate-50 py-3 px-5"></Card.Container>
         <Card.Container className="flex w-full justify-center my-4">
-          <Button size="sm" type="primary" color="success" className="mx-5 my-5" onClick={handleCopy}>
+          <Button
+            size="sm"
+            type="primary"
+            color="success"
+            className="mx-5 my-5"
+            onClick={handleCopy}
+          >
             Share Profile
           </Button>
         </Card.Container>
