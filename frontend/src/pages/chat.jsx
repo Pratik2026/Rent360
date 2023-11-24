@@ -10,6 +10,7 @@ import {
 
 
 export const Chat = () => {
+    
   return (
     <div className="flex flex-col bg-[#A4A0A0] h-screen">
       <Navbar />
@@ -138,63 +139,7 @@ export const Chat = () => {
               </div>
             </div>
           </div>
-          <div className="chat flex items-center h-20 border-b-[1px] border-gray-50 hover:bg-[#ebebeb] ">
-            <img className="h-10 rounded-full mx-4" src={c1} alt="" />
-
-            <div className="flex flex-col gap-2 w-3/4">
-              <div className="flex justify-between w-full">
-                <div className="title ml-1 text-lg font-medium">
-                  Ramesh Babu
-                </div>
-                <div className="mr-1">time</div>
-              </div>
-
-              <div className="flex justify-between">
-                <p className="text-[#BBACAF] ml-1">How u doing...?</p>
-                <div className="h-6 w-6 rounded-full text-center text-white bg-custom_primary">
-                  1
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="chat flex items-center h-20 border-b-[1px] border-gray-50 hover:bg-[#ebebeb] ">
-            <img className="h-10 rounded-full mx-4" src={c1} alt="" />
-
-            <div className="flex flex-col gap-2 w-3/4">
-              <div className="flex justify-between w-full">
-                <div className="title ml-1 text-lg font-medium">
-                  Ramesh Babu
-                </div>
-                <div className="mr-1">time</div>
-              </div>
-
-              <div className="flex justify-between">
-                <p className="text-[#BBACAF] ml-1">How u doing...?</p>
-                <div className="h-6 w-6 rounded-full text-center text-white bg-custom_primary">
-                  1
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="chat flex items-center h-20 border-b-[1px] border-gray-50 hover:bg-[#ebebeb] ">
-            <img className="h-10 rounded-full mx-4" src={c1} alt="" />
-
-            <div className="flex flex-col gap-2 w-3/4">
-              <div className="flex justify-between w-full">
-                <div className="title ml-1 text-lg font-medium">
-                  Ramesh Babu
-                </div>
-                <div className="mr-1">time</div>
-              </div>
-
-              <div className="flex justify-between">
-                <p className="text-[#BBACAF] ml-1">How u doing...?</p>
-                <div className="h-6 w-6 rounded-full text-center text-white bg-custom_primary">
-                  1
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         <div className="right-side w-2/3">
@@ -214,7 +159,7 @@ export const Chat = () => {
               <DotsThreeVertical size={32} />
             </div>
           </div>
-          <div className="h-[562px] bg-[#e5ddd5] flex flex-col justify-end overflow-scroll">
+          <div className="h-[499px] bg-[#e5ddd5] flex flex-col overflow-y-scroll ">
             <div className="bg-[#e5ddd5] h-[10rem]  flex items-start">
               <div className="p-4">
                 <div className="flex gap-3">
@@ -300,7 +245,9 @@ export const Chat = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#F0F0F0] h-16 flex justify-around items-center gap-2 py-2">
+            
+          </div>
+          <div className="bg-[#F0F0F0] h-16 flex justify-around items-center gap-2 py-2">
               <Smiley size={32} />
               <PaperclipHorizontal size={32} className=" rotate-90" />
               <input
@@ -310,7 +257,6 @@ export const Chat = () => {
               />
               <PaperPlaneRight size={32} />
             </div>
-          </div>
         </div>
       </div>
     </div>
