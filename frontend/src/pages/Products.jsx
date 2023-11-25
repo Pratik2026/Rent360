@@ -6,7 +6,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Products = () => {
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +17,7 @@ const Products = () => {
           Array.isArray(response.data) &&
           response.data.length > 0
         ) {
-          setProducts(response.data); 
+          setProducts(response.data);
         } else {
           console.log("No products found in the response.");
         }
@@ -40,7 +39,7 @@ const Products = () => {
   return (
     <div>
       <Navbar />
-      <div className="categories my-20 bg-slate-100 shadow-md mb-4 ">
+      <div className="categories my-20 pl-10 bg-slate-100 shadow-md mb-4 ">
         <DropdownComponent />
       </div>
 
@@ -56,7 +55,7 @@ const Products = () => {
             />
           ))
         ) : (
-          <p>No products found</p>
+          <p className="text-xl mb-4">No products found</p>
         )}
       </div>
       <Footer />

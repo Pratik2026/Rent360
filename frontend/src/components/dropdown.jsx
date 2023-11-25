@@ -39,7 +39,7 @@ export const DropdownComponent = () => {
           <a href="/search/clothes">Clothes</a>
         </Dropdown.Item>
         <Dropdown.Item>
-          <a href="/search/jwellery">Jwellery</a>
+          <a href="/search/jwellery">Jewellery</a>
         </Dropdown.Item>
         <Dropdown.Item>
           <a href="/search/apartment">Apartments</a>

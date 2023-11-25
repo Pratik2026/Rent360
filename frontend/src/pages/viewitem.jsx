@@ -51,10 +51,9 @@ function View() {
     console.log(response.data.status);
     console.log("above");
     if (response.data.status === true) {
-      console.log("added")
+      console.log("added");
       setWishStatus("ADDED TO WISHLIST");
-    }
-    else {
+    } else {
       setWishStatus("ADD TO WISHLIST");
     }
   };
@@ -70,7 +69,7 @@ function View() {
       }
     };
     wishChecker();
-  },[userid,id]);
+  }, [userid, id]);
 
   return (
     <div>
@@ -94,7 +93,7 @@ function View() {
           <div className="right-section w-full md:w-1/3 flex flex-col my-16 gap-8">
             <div className="pricecard border border-gray-100 h-48 flex flex-col justify-around p-4 mr-4 bg-white rounded-md">
               <div className="price font-bold text-8xl">
-                {products && <p>{products.price}</p>}
+                {products && <p>₹{products.price}</p>}
               </div>
               <div className="w-16 flex gap-4">
                 <Badge size="sm" colorType="light" color="gray">
@@ -110,7 +109,11 @@ function View() {
               </div>
 
               <div className="bottom flex justify-between">
-                <p className="address">{products && <p>{products.title}</p>}</p>
+                <p className="address">
+                  {products && (
+                    <p className="text-xl font-medium">{products.title}</p>
+                  )}
+                </p>
                 <span>
                   <Badge size="sm" colorType="light" color="gray">
                     26 Oct
