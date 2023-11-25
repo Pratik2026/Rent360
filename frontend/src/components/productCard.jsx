@@ -62,7 +62,7 @@ export const ProductCard = (props) => {
         <Card.Container className="p-6">
           <Card.Container className="flex items-center justify-between">
             <Badge size="xs" colorType="light" color="gray">
-              For Sale
+              For Rent
             </Badge>
             <Card.Title>{props.price}</Card.Title>
           </Card.Container>

@@ -1,7 +1,7 @@
 "use client";
 
 import { CarouselComponent } from "../components/carousel";
-import { Chat, Phone } from "phosphor-react";
+import { Chat, Phone, PlusCircle } from "phosphor-react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Badge } from "keep-react";
@@ -79,9 +79,9 @@ function View() {
         <div className="flex flex-col md:flex-row justify-around h-400">
           <div className="left-section flex flex-col w-full md:w-2/3 my-16">
             <div className="img px-24 mx-16 bg-black border h-[30rem] pt-12">
-              <CarouselComponent />
+              {products && <img src={products.product_image_url} />}
             </div>
-            <div className="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md">
+            <div className="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[55rem] ">
               <div className="text-4xl text-bold text-gray-900 m-2">
                 Description
               </div>
@@ -130,7 +130,7 @@ function View() {
                 className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl"
                 onClick={handleWish}
               >
-                <Chat size={32} color="#5AE4A8" weight="bold" />
+                <PlusCircle size={32} color="#5AE4A8" weight="bold" />
                 <p>{wishStatus}</p>
               </button>
               <div className="text-gray-900 font-bold py-2 mx-4 flex justify-center items-center gap-2">

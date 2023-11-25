@@ -5,7 +5,7 @@ import Navbar from "../components/navbar.jsx";
 import { ProfileCard } from "../components/profileCard.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ProductCard } from "../components/productCard.jsx";
+import { ProductCard } from "../components/userProductCard.jsx";
 
 const userProfile = () => {
   const [products, setProducts] = useState({});
@@ -39,9 +39,9 @@ const userProfile = () => {
   return (
     <div>
       <Navbar />
-      <div className="mx-40 my-20 flex  items-center gap-4 ">
+      <div className="mx-40 my-20 flex  items-start gap-4 ">
         <ProfileCard />
-        <div className="display_box flex flex-col justify-center items-center w-full">
+        <div className="display_box flex flex-wrap gap-16 justify-center w-full">
           {products.length > 0 ? (
             products.map((product) => (
               <ProductCard

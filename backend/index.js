@@ -5,6 +5,8 @@ const body = require('body-parser');
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser');
+const { Server } = require("socket.io");
+const http = require("http");
 
 const db = mysql.createConnection(
     {
@@ -27,6 +29,35 @@ app.use(cookieParser());
 app.use(body.json());
 app.use(body.urlencoded({ extended: true }));
 app.use(express.json());
+
+const httpServer = app.listen(7000, 'localhost', () => {
+    console.log("Server is running on http://localhost:7000/");
+});
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
+
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+  });
+
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User Disconnected", socket.id);
+  });
+});
+
 
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
@@ -304,6 +335,3 @@ app.post('/checkWish', (req, res) => {
 })
 
 
-app.listen(7000, 'localhost', () => {
-    console.log("Server is running on http://localhost:7000/");
-});

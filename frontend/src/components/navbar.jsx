@@ -76,7 +76,7 @@ const Navbar = () => {
         {loginstatus ? (
           <div className="flex gap-8">
             <ButtonComponent />
-            <div className="mr-8 hover:cursor-pointer">
+            <div className="mr-8 hover:cursor-pointer ">
               <AvatarComponent avatar={c1} />
             </div>
           </div>

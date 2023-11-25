@@ -29,7 +29,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/search/:category" element={<FilteredProducts />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path="/chat/:sellerid" element={<Chat />} />
       </Routes>
     </BrowserRouter>
   );
