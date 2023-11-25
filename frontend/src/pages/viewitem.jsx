@@ -5,12 +5,13 @@ import { Chat, Phone, PlusCircle } from "phosphor-react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Badge } from "keep-react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 function View() {
   const [Itemstatus, setItemStatus] = useState("Available");
   const [wishStatus, setWishStatus] = useState("ADD TO WISHLIST");
+  const [sellerid, setSellerid] = useState('')
 
   const { id } = useParams();
 
@@ -38,6 +39,7 @@ function View() {
     // Now you can safely use products here
     if (products) {
       console.log(products);
+      setSellerid(products.sellerid);
     }
   }, [products]);
 
@@ -70,6 +72,13 @@ function View() {
     };
     wishChecker();
   }, [userid, id]);
+  const navigate = useNavigate();
+  const handleChat = () => {
+    if(sellerid)
+      navigate(`/chat/${sellerid}`)
+    else
+      navigate('/chat/ifahadsheik')
+  }
 
   return (
     <div>
@@ -125,7 +134,7 @@ function View() {
               <p className="text-gray-900 font-bold py-2 mx-4 align-left">
                 {products && <p>{products.userid}</p>}
               </p>
-              <button className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl">
+              <button onClick={handleChat} className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl">
                 <Chat size={32} color="#5AE4A8" weight="bold" />
                 <p>CHAT WITH SELLER</p>
               </button>

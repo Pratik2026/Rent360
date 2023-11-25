@@ -23,7 +23,8 @@ const Navbar = () => {
       console.log("pressed");
       const enteredValue = event.target.value;
       navigate(`/search/${enteredValue}`);
-      a = "";
+      window.location.reload();
+      // a = "";
     }
   };
 
