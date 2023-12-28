@@ -77,7 +77,7 @@ function View() {
     if(sellerid)
       navigate(`/chat/${sellerid}`)
     else
-      navigate('/chat/ifahadsheik')
+      navigate('/chat/ramesh123')
   }
 
   return (
@@ -87,7 +87,7 @@ function View() {
         <div className="flex flex-col md:flex-row justify-around h-400">
           <div className="left-section flex flex-col w-full md:w-2/3 my-16">
             <div className="img px-24 mx-16 bg-black border h-[30rem] pt-12">
-              {products && <img src={products.product_image_url} />}
+              {products && <img className="w-full h-full object-cover" src={products.product_image_url} />}
             </div>
             <div className="description shadow-md border bg-white flex flex-col justify-between m-8 rounded-md w-[55rem] ">
               <div className="text-4xl text-bold text-gray-900 m-2">

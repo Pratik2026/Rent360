@@ -76,7 +76,7 @@ const verifyUser = (req, res, next) => {
             }
         })
     }
-}
+} 
 
 app.get('/', verifyUser, (req, res) => {
     return res.json({status: true, name: req.name, userid:req.userid})

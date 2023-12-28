@@ -45,8 +45,7 @@ const Home = () => {
           Array.isArray(response.data) &&
           response.data.length > 0
         ) {
-          const val = response.data.length;
-          const fourNumbers = selectFourNumbers(val);
+          const fourNumbers = selectFourNumbers(17);
           setProducts([
             response.data[fourNumbers[0]],
             response.data[fourNumbers[1]],
@@ -86,8 +85,10 @@ const Home = () => {
               rent anything?
             </div>
             <p className="text-md lg:text-sm text-textcolor font-medium">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              <br /> Magni maiores, ducimus quibusdam temporibus aliquid
+              Your go-to rental destination for everything you need. From
+              gadgets
+              <br /> to furniture, find and rent a diverse range of products
+              hassle-free
             </p>
           </div>
           <Button
@@ -190,17 +191,25 @@ const Home = () => {
           <div className="about-text flex flex-col gap-4 w-2/3">
             <span className="text-custom_primary font-medium">ABOUT US</span>
             <p className="text-left">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum,
-              sint incidunt. Nihil assumenda hic laborum libero quasi maxime
-              tenetur, quidem amet eos et facere voluptas aliquid quisquam vero.
-              Quaerat consequatur soluta consequuntur tempora maxime!
+              At Rent360, we believe in transforming the way people access and
+              experience products. Our platform serves as a dynamic hub for
+              renting a vast array of items, from cutting-edge electronics to
+              stylish furniture and beyond. With a commitment to simplicity and
+              convenience, we've streamlined the rental process, making it easy
+              for users to discover, select, and enjoy the latest products
+              without the burden of ownership.
             </p>
             <p className="text-left">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ad
-              ratione iste quibusdam praesentium ipsa vel tenetur autem? Lorem
-              ipsum dolor sit, amet consectetur adipisicing elit. Quo veniam
-              perferendis illum eum dolor consequatur, doloremque sapiente rerum
-              ea esse.
+              Built on the principles of sustainability and community, Rent360
+              promotes a sharing economy, reducing waste and promoting
+              responsible consumption. Our user-friendly interface ensures a
+              seamless browsing and renting experience, while our dedicated
+              customer support team is always ready to assist. Whether you're
+              looking to upgrade your tech, furnish your space, or simply try
+              before you buy, Rent360 is your trusted partner in unlocking a
+              world of possibilities through hassle-free rentals. Join us in
+              redefining ownership and embracing a more sustainable, accessible
+              future.
             </p>
             <a
               href="#"
@@ -217,7 +226,9 @@ const Home = () => {
         id="reviews"
       >
         <div className="heading flex flex-col justify-center items-center gap-4">
-          <span className="text-lg font-medium text-custom_primary">Reviews</span>
+          <span className="text-lg font-medium text-custom_primary">
+            Reviews
+          </span>
           <div className="text-3xl font-bold text-center">
             What Our Customers Say
           </div>
