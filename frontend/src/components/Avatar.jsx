@@ -5,15 +5,19 @@ import { User, Heart, SignOut, Gear, Question } from "phosphor-react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import { logoutRoute } from "../../utils/api_routes";
 
 const PopoverContent = () => {
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
-  axios.get('http://localhost:7000/logout')
+  axios.get(logoutRoute)
     .then(res => {
       if (res.data.status === true) {
+        localStorage.removeItem('name');
+        localStorage.removeItem('loginstatus');
+        localStorage.removeItem('userid');
         console.log("Logout successful");
         navigate('/login');
       } else {

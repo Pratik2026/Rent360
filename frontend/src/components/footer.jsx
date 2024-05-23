@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="flex mt-8 space-x-6 text-gray-600">
               <a
                 className="hover:opacity-75"
-                href
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -35,7 +35,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -71,7 +71,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -91,7 +91,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -115,19 +115,19 @@ const Footer = () => {
             <div>
               <p className="font-medium">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   About{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Meet the Team{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   History{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Careers{" "}
                 </a>
@@ -136,23 +136,23 @@ const Footer = () => {
             <div>
               <p className="font-medium">Services</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   1on1 Coaching{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Company Review{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Accounts Review{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   HR Consulting{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   SEO Optimisation{" "}
                 </a>
@@ -161,15 +161,15 @@ const Footer = () => {
             <div>
               <p className="font-medium">Helpful Links</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Contact{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   FAQs{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Live Chat{" "}
                 </a>
@@ -178,19 +178,19 @@ const Footer = () => {
             <div>
               <p className="font-medium">Legal</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Privacy Policy{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Terms &amp; Conditions{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Returns Policy{" "}
                 </a>
-                <a className="hover:opacity-75" href>
+                <a className="hover:opacity-75" href="#">
                   {" "}
                   Accessibility{" "}
                 </a>

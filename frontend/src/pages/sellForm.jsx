@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { addProductRoute } from "../../utils/api_routes";
 
 const SellForm = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const SellForm = () => {
     } = product;
     const userid = localStorage.getItem("userid");
 
-    const response = await axios.post("http://localhost:7000/addProduct", {
+    const response = await axios.post(addProductRoute, {
       title,
       description,
       price,

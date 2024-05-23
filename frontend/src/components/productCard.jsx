@@ -4,6 +4,8 @@ import { Badge, Button, Card } from "keep-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import{ Toaster, toast } from "react-hot-toast";
+import { addWishlistRoute, checkWishlistRoute } from "../../utils/api_routes";
 
 export const ProductCard = (props) => {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ export const ProductCard = (props) => {
   const [wishStatus, setWishStatus] = useState(false);
 
   const id = props.id;
-  console.log(id);
+
   const handleClick = () => {
     console.log("clicked");
     navigate(`/products/product/${id}`);
@@ -20,25 +22,23 @@ export const ProductCard = (props) => {
     const userid = localStorage.getItem("userid");
 
     const handleWish = async () => {
-      const response = await axios.post("http://localhost:7000/addWish", {
+      const response = await axios.post(addWishlistRoute, {
         userid,
         id,
       });
-      console.log(response.data.status);
-      console.log("above");
       if (response.data.status === true) {
-        console.log("true");
-        setWishStatus(true);
+        
+        wishStatus ? toast.success("Removed from wishlist") : toast.success("Added to wishlist");
+        setWishStatus(!wishStatus);
       }
       else {
-        console.log("false");
         setWishStatus(false);
       }
     };
 
     useEffect(() => {
       const wishChecker = async () => {
-        const response = await axios.post("http://localhost:7000/checkWish", {
+        const response = await axios.post(checkWishlistRoute, {
           userid,
           id,
         });
@@ -76,6 +76,7 @@ export const ProductCard = (props) => {
           </Card.Container>
         </Card.Container>
       </Card>
+      <Toaster position="top-center" />
     </>
   );
 };

@@ -5,6 +5,7 @@ import Navbar from "../components/navbar.jsx";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { filteredProductsRoute } from "../../utils/api_routes.jsx";
 
 const FilteredProducts = () => {
     const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ const FilteredProducts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:7000/filteredproducts", {category});
+        const response = await axios.post(filteredProductsRoute, {category});
         console.log(response.data);
         if (
           response.data
@@ -29,12 +30,6 @@ const FilteredProducts = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    if (products.length>0 ) {
-      console.log(products);
-    }
-  }, [products]);
 
   return (
     <div>

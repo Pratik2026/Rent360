@@ -4,6 +4,7 @@ import { Badge, Button, Card } from "keep-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { addWishlistRoute, checkWishlistRoute } from "../../utils/api_routes";
 
 export const ProductCard = (props) => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export const ProductCard = (props) => {
   const userid = localStorage.getItem("userid");
 
   const handleWish = async () => {
-    const response = await axios.post("http://localhost:7000/addWish", {
+    const response = await axios.post(addWishlistRoute, {
       userid,
       id,
     });
@@ -37,7 +38,7 @@ export const ProductCard = (props) => {
 
   useEffect(() => {
     const wishChecker = async () => {
-      const response = await axios.post("http://localhost:7000/checkWish", {
+      const response = await axios.post(checkWishlistRoute, {
         userid,
         id,
       });

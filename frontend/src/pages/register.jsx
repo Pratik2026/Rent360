@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { registerRoute } from "../../utils/api_routes";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Register = () => {
     if (handleValidation()) {
       const { userid, name, password, email, phone } = formval;
 
-      const response = await axios.post("http://localhost:7000/register", {
+      const response = await axios.post(registerRoute, {
         userid,
         name,
         phone,

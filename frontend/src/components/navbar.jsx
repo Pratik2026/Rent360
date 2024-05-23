@@ -2,34 +2,33 @@ import React, { useEffect } from "react";
 import c1 from "../assets/c1.png";
 import logo from "../assets/logo.jpeg";
 import { AvatarComponent } from "./Avatar.jsx";
-import { SearchBarComponent } from "./search.jsx";
 import { ButtonComponent } from "./sellbutton.jsx";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [loginstatus, setLoginStatus] = React.useState(false);
   const [name, setName] = React.useState("");
   const [userid, setUserid] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  // const [message, setMessage] = React.useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // let a = "";
 
-  const handleKeyDown = (event) => {
-    console.log("Key pressed:", event.key);
-    if (event.key === "Enter") {
-      console.log("Inside Enter condition");
-      console.log("pressed");
-      const enteredValue = event.target.value;
-      navigate(`/search/${enteredValue}`);
-      window.location.reload();
-      // a = "";
-    }
-  };
+  // const handleKeyDown = (event) => {
+  //   console.log("Key pressed:", event.key);
+  //   if (event.key === "Enter") {
+  //     console.log("Inside Enter condition");
+  //     console.log("pressed");
+  //     const enteredValue = event.target.value;
+  //     navigate(`/search/${enteredValue}`);
+  //     window.location.reload();
+  //     // a = "";
+  //   }
+  // };
 
   useEffect(() => {
-    const storedLoginStatus = localStorage.getItem("loginstatus");
+    // const storedLoginStatus = localStorage.getItem("loginstatus");
     const storedName = localStorage.getItem("name");
     const storedUserid = localStorage.getItem("userid");
 
@@ -64,15 +63,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
-      <div className="navbar flex justify-around items-center h-20 bg-[#ffffff] shadow-md fixed top-0 z-10 w-screen">
+    <>
+      <div className="navbar flex justify-between items-center h-20 bg-[#ffffff] shadow-md fixed top-0 z-10 w-screen">
         <a href="/">
-          <img src={logo} alt="" className="h-16 my-2 rounded-md" />
+          <img src={logo} alt="" className="h-16 my-2 ml-4 rounded-md" />
         </a>
-
-        <div className="search-bar w-1/2" onKeyDown={handleKeyDown}>
-          <SearchBarComponent />
-        </div>
 
         {loginstatus ? (
           <div className="flex gap-8">
@@ -89,7 +84,7 @@ const Navbar = () => {
           </span>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

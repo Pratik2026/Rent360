@@ -4,6 +4,7 @@ import Footer from "../components/footer.jsx";
 import Navbar from "../components/navbar.jsx";
 import { ProductCard } from "../components/productCard.jsx";
 import axios from "axios";
+import { wishlistRoute } from "../../utils/api_routes.jsx";
 
 export const Wishlist = () => {
   const [products, setProducts] = useState({});
@@ -11,8 +12,7 @@ export const Wishlist = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(
-          "http://localhost:7000/showWishlist",
+        const response = await axios.post(wishlistRoute,
           { userid }
         );
         console.log(response.data);
@@ -28,12 +28,6 @@ export const Wishlist = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    if (products.length > 0) {
-      console.log(products);
-    }
-  }, [products]);
 
   return (
     <div className="h-screen flex flex-col justify-between">

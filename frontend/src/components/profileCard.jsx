@@ -1,6 +1,6 @@
 "use client";
 import { Avatar, Button, Card } from "keep-react";
-import { Calendar, EnvelopeSimple } from "phosphor-react";
+import { EnvelopeSimple } from "phosphor-react";
 import c1 from "../assets/c1.png";
 
 export const ProfileCard = () => {

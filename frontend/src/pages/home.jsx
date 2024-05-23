@@ -13,6 +13,7 @@ import { RatingComponent } from "./rating.jsx";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { productsRoute } from "../../utils/api_routes.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,8 +39,8 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:7000/products", {});
-
+        const response = await axios.post(productsRoute, {});
+console.log(response.data);
         if (
           response.data &&
           Array.isArray(response.data) &&
@@ -67,27 +68,20 @@ const Home = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    // Now you can safely use products here
-    if (products.length > 0) {
-      console.log(products[0].title);
-    }
-  }, [products]);
-
   return (
     <>
       <Navbar />
-      <section className="text-image flex justify-between mt-20" id="home">
-        <div className="flex flex-col xl:ml-20 md:ml-10 gap-16 w-1/3 my-24">
+      <section className="text-image flex flex-col md:flex-row justify-between mt-20" id="home">
+        <div className="flex flex-col ml-4 xl:ml-20 md:ml-10 gap-4 md:gap-16 my-4 md:my-24 ">
           <div className="text flex flex-col gap-4">
-            <div className=" xl:text-[52px] lg:text-[30px] sm:text-[20px] font-bold tracking-wider">
+            <div className=" xl:text-[52px] lg:text-[30px] text-8xl font-bold tracking-wider">
               <span className="text-custom_primary ">Looking </span> to <br />
               rent anything?
             </div>
             <p className="text-md lg:text-sm text-textcolor font-medium">
               Your go-to rental destination for everything you need. From
               gadgets
-              <br /> to furniture, find and rent a diverse range of products
+              { window.innerWidth> '450px' ? <br /> : <></> } to furniture, find and rent a diverse range of products
               hassle-free
             </p>
           </div>
@@ -100,7 +94,7 @@ const Home = () => {
             Try it Out!
           </Button>
         </div>
-        <div className="w-2/3 my-8 self self-center">
+        <div className="w-full my-8 self self-center">
           <CarouselComponent />
         </div>
       </section>
@@ -115,27 +109,27 @@ const Home = () => {
           </span>
           <div className="text-3xl font-bold">Rent with 3 Easy Steps</div>
         </div>
-        <div className="rent-container flex justify-center items-center w-screen gap-10">
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+        <div className="rent-container flex flex-col md:flex-row justify-center items-center sm: gap-2 xl:gap-10">
+          <div className="box flex flex-col justify-center items-center gap-4  mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <MapPin size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Choose A Location</div>
-            <p className="text-center mx-5 w-2/3">
+            <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+          <div className="box flex flex-col justify-center items-center gap-4  mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <Calendar size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Pick-Up Date</div>
-            <p className="text-center mx-5 w-2/3">
+            <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
           </div>
-          <div className="box flex flex-col justify-center items-center gap-4 shadow-2xl w-1/3 mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+          <div className="box flex flex-col justify-center items-center gap-4  mx-8 py-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             <Package size={80} color="#18B5B0" />
             <div className="font-medium text-xl">Rent An Item</div>
-            <p className="text-center mx-5 w-2/3">
+            <p className="text-center mx-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iste
               delectus sequi provident, inventore animi?
             </p>
@@ -184,11 +178,11 @@ const Home = () => {
             Best Customer Experience
           </div>
         </div>
-        <div className="about-container flex justify-end items-center">
-          <div className="about-img  w-1/3 flex justify-center">
+        <div className="about-container flex flex-col md:flex-row justify-between items-center">
+          <div className="about-img w-full flex justify-center">
             <img src={about} alt="" className="h-72" />
           </div>
-          <div className="about-text flex flex-col gap-4 w-2/3">
+          <div className="about-text flex flex-col gap-4 mx-4">
             <span className="text-custom_primary font-medium">ABOUT US</span>
             <p className="text-left">
               At Rent360, we believe in transforming the way people access and
@@ -234,7 +228,7 @@ const Home = () => {
           </div>
         </div>
         <div className="reviews-container flex justify-center items-center flex-wrap gap-16">
-          <div className="box p-10 rounded-lg shadow-md w-96">
+          <div className="box p-10 rounded-lg shadow-md max-w-sm">
             <div className="w-32 h-32">
               <img
                 src={c1}
@@ -253,7 +247,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="box p-10 rounded-lg shadow-md w-96">
+          <div className="box p-10 rounded-lg shadow-md max-w-sm">
             <div className="w-32 h-32">
               <img
                 src={c2}
@@ -271,7 +265,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="box p-10 rounded-lg shadow-md w-96">
+          <div className="box p-10 rounded-lg shadow-md max-w-sm">
             <div className="w-32 h-32">
               <img
                 src={c3}

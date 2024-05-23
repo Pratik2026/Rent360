@@ -4,13 +4,14 @@ import Footer from "../components/footer.jsx";
 import Navbar from "../components/navbar.jsx";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { productsRoute } from "../../utils/api_routes.jsx";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:7000/products", {});
+        const response = await axios.post(productsRoute, {});
 
         if (
           response.data &&

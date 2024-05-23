@@ -7,7 +7,7 @@ import { Carousel } from "keep-react";
 
 export const CarouselComponent = () => {
   return (
-    <div className="h-56 w-full sm:h-64 xl:h-96 2xl:h-96">
+    <div className="h-64 max-w-full xl:h-96 2xl:h-96 mx-4">
       <Carousel slideInterval={5000} showControls={true} indicators={true}>
         <img src={i1} alt="slider-1" height={400} width={910} />
         <img src={i2} alt="slider-2" height={400} width={910} />

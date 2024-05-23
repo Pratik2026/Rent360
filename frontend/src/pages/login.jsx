@@ -3,6 +3,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import google from "../assets/Google.png";
+import { loginRoute } from "../../utils/api_routes";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Login = () => {
     axios.defaults.withCredentials = true;
 
     if (handleValidation()) {
-      const { data } = await axios.post("http://localhost:7000/login", {
+      const { data } = await axios.post(loginRoute, {
         userid,
         password,
       });

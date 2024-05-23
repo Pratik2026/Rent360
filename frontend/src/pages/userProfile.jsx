@@ -6,17 +6,15 @@ import { ProfileCard } from "../components/profileCard.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ProductCard } from "../components/userProductCard.jsx";
+import { userProductRoute } from "../../utils/api_routes.jsx";
 
-const userProfile = () => {
+const UserProfile = () => {
   const [products, setProducts] = useState({});
   const userid = localStorage.getItem("userid");
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(
-          "http://localhost:7000/showMyProducts",
-          { userid }
-        );
+        const response = await axios.post(userProductRoute, { userid });
         console.log(response.data);
         if (response.data) {
           setProducts(response.data);
@@ -37,12 +35,11 @@ const userProfile = () => {
     }
   }, [products]);
   return (
-    <div>
+    <>
       <Navbar />
       <div className="mx-40 my-20 flex  items-start gap-4">
         <ProfileCard />
         <div className="display_box flex  flex-wrap gap-16 justify-center w-full mt-10">
-          
           {products.length > 0 ? (
             products.map((product) => (
               <ProductCard
@@ -70,8 +67,8 @@ const userProfile = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default userProfile;
+export default UserProfile;

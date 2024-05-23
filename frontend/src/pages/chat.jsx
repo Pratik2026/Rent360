@@ -10,8 +10,8 @@ import {
 } from "phosphor-react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import io from "socket.io-client";
-const socket = io.connect("http://localhost:7000");
+// import io from "socket.io-client";
+// const socket = io.connect("http://localhost:7000");
 import { useEffect, useState, useCallback } from "react";
 
 export const Chat = () => {
@@ -30,46 +30,46 @@ export const Chat = () => {
     return sortedStrings.join("");
   }
 
-  const [room, setRoom] = useState(linkName);
-  const [showChat, setShowChat] = useState(false);
-  useEffect(() => {
-    socket.emit("join_room", room);
-  }, []);
+  // const [room, setRoom] = useState(linkName);
+  // const [showChat, setShowChat] = useState(false);
+  // useEffect(() => {
+  //   socket.emit("join_room", room);
+  // }, []);
 
-  const [currentMessage, setCurrentMessage] = useState("");
-  const [messageList, setMessageList] = useState([]);
-  const sendMessage = async () => {
-    if (currentMessage !== "") {
-      console.log("message sent");
-      const messageData = {
-        room: room,
-        author: userid,
-        message: currentMessage,
-        time:
-          new Date(Date.now()).getHours() +
-          ":" +
-          new Date(Date.now()).getMinutes(),
-      };
+  // const [currentMessage, setCurrentMessage] = useState("");
+  // const [messageList, setMessageList] = useState([]);
+  // const sendMessage = async () => {
+  //   if (currentMessage !== "") {
+  //     console.log("message sent");
+  //     const messageData = {
+  //       room: room,
+  //       author: userid,
+  //       message: currentMessage,
+  //       time:
+  //         new Date(Date.now()).getHours() +
+  //         ":" +
+  //         new Date(Date.now()).getMinutes(),
+  //     };
 
-      await socket.emit("send_message", messageData);
-      setMessageList((list) => [...list, messageData]);
-      setCurrentMessage("");
-    }
-  };
+  //     await socket.emit("send_message", messageData);
+  //     setMessageList((list) => [...list, messageData]);
+  //     setCurrentMessage("");
+  //   }
+  // };
 
-  const updateMessageList = useCallback(
-    (data) => {
-      setMessageList((list) => [...list, data]);
-    },
-    [setMessageList]
-  );
+  // const updateMessageList = useCallback(
+  //   (data) => {
+  //     setMessageList((list) => [...list, data]);
+  //   },
+  //   [setMessageList]
+  // );
 
-  useEffect(() => {
-    socket.on("receive_message", updateMessageList);
-    return () => {
-      socket.off("receive_message", updateMessageList);
-    };
-  }, [updateMessageList]);
+  // useEffect(() => {
+  //   socket.on("receive_message", updateMessageList);
+  //   return () => {
+  //     socket.off("receive_message", updateMessageList);
+  //   };
+  // }, [updateMessageList]);
 
   return (
     <div className="flex flex-col bg-[#A4A0A0] h-screen">

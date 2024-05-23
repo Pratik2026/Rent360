@@ -8,6 +8,7 @@ import { Badge } from "keep-react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { addWishlistRoute, checkWishlistRoute, productsRoute } from "../../utils/api_routes";
 function View() {
   const [Itemstatus, setItemStatus] = useState("Available");
   const [wishStatus, setWishStatus] = useState("ADD TO WISHLIST");
@@ -19,7 +20,7 @@ function View() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:7000/products", {});
+        const response = await axios.post(productsRoute, {});
         console.log(response.data);
 
         if (response.data) {
@@ -46,7 +47,7 @@ function View() {
   const userid = localStorage.getItem("userid");
 
   const handleWish = async () => {
-    const response = await axios.post("http://localhost:7000/addWish", {
+    const response = await axios.post(addWishlistRoute, {
       userid,
       id,
     });
@@ -62,7 +63,7 @@ function View() {
 
   useEffect(() => {
     const wishChecker = async () => {
-      const response = await axios.post("http://localhost:7000/checkWish", {
+      const response = await axios.post(checkWishlistRoute, {
         userid,
         id,
       });
@@ -94,9 +95,9 @@ function View() {
                 Description
               </div>
 
-              <p className="text-gray-900 m-2 text-sm">
+              <div className="text-gray-900 m-2 text-sm">
                 {products && <p>{products.description}</p>}
-              </p>
+              </div>
             </div>
           </div>
           <div className="right-section w-full md:w-1/3 flex flex-col my-16 gap-8">
@@ -118,11 +119,11 @@ function View() {
               </div>
 
               <div className="bottom flex justify-between">
-                <p className="address">
+                <div className="address">
                   {products && (
                     <p className="text-xl font-medium">{products.title}</p>
                   )}
-                </p>
+                </div>
                 <span>
                   <Badge size="sm" colorType="light" color="gray">
                     26 Oct
@@ -131,9 +132,9 @@ function View() {
               </div>
             </div>
             <div className="ownerdetail h-60 border border-gray-100 flex flex-col justify-center items-center gap-4 mr-4 bg-white rounded-md mt-4">
-              <p className="text-gray-900 font-bold py-2 mx-4 align-left">
+              <div className="text-gray-900 font-bold py-2 mx-4 align-left">
                 {products && <p>{products.userid}</p>}
-              </p>
+              </div>
               <button onClick={handleChat} className=" text-gray-900 font-bold py-2 mx-4 w-3/4 outline outline-custom_primary flex justify-center items-center gap-2 rounded-xl">
                 <Chat size={32} color="#5AE4A8" weight="bold" />
                 <p>CHAT WITH SELLER</p>
