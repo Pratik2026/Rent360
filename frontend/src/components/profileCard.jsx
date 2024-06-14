@@ -9,7 +9,7 @@ export const ProfileCard = () => {
   const name = localStorage.getItem("name");
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(`http://localhost:5173/profile/${userid}`);
+    navigator.clipboard.writeText(`${import.meta.env.VITE_FRONTEND_URL}/${userid}`);
     alert("profile copied to the clipboard");
   };
 

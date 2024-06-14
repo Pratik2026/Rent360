@@ -25,5 +25,5 @@ package-lock.json
 *.sln
 *.sw?
 
-# Config files
-dbconfig.js
+# env files
+.env

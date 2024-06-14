@@ -47,7 +47,7 @@ const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:7000")
+      .get(import.meta.env.VITE_BACKEND_URL)
       .then((res) => {
         if (res.data.status === true) {
           console.log(res.data);

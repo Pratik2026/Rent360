@@ -1,4 +1,4 @@
-export const host = "http://localhost:7000";
+export const host = import.meta.env.VITE_BACKEND_URL;
 
 export const registerRoute = `${host}/auth/register`;
 export const loginRoute = `${host}/auth/login`;
