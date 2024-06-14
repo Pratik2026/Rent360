@@ -16,16 +16,16 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/auth', authRoutes);
 app.use('/products', productRoutes);
 app.use('/user', userRoutes);
+
 app.get('/', verifyUser, (req, res) => {
-    return res.json({status: true, name: req.name, userid:req.userid})
-})
+    return res.json({ status: true, name: req.name, userid: req.userid });
+});
 
 const PORT = 7000;
 app.listen(PORT, '0.0.0.0', () => {
