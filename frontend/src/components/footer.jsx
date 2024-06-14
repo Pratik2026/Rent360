@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
     // <footer className="bg-gradient-to-r from-gray-100 via-[#a2bfe9] to-gray-100">
-    <footer className="bg-[#E8EAF6] to-gray-100">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-4">
+    <footer className="bg-[#E8EAF6] to-gray-100 w-full">
+      <div className=" px-4 py-8 mx-auto sm:px-6 lg:px-4">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="text-md font-medium  text-gray-900 uppercase">
@@ -111,7 +111,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <p className="font-medium">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">

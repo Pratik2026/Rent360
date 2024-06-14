@@ -37,9 +37,9 @@ const UserProfile = () => {
   return (
     <>
       <Navbar />
-      <div className="mx-40 my-20 flex  items-start gap-4">
+      <div className="mx-20 my-20 flex items-start gap-4">
         <ProfileCard />
-        <div className="display_box flex  flex-wrap gap-16 justify-center w-full mt-10">
+        <div className="display_box flex flex-wrap gap-16 justify-center w-full mt-10">
           {products.length > 0 ? (
             products.map((product) => (
               <ProductCard

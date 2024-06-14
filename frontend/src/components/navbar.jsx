@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import c1 from "../assets/c1.png";
+import avatar from "../assets/avatar.png";
 import logo from "../assets/logo.jpeg";
 import { AvatarComponent } from "./Avatar.jsx";
 import { ButtonComponent } from "./sellbutton.jsx";
@@ -64,20 +64,20 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar flex justify-between items-center h-20 bg-[#ffffff] shadow-md fixed top-0 z-10 w-screen">
+      <div className="navbar flex justify-between items-center h-20 bg-[#ffffff] shadow-md fixed top-0 z-10 w-full">
         <a href="/">
-          <img src={logo} alt="" className="h-16 my-2 ml-4 rounded-md" />
+          <img src={logo} alt="" className="md:h-16 h-12 my-2 ml-4 rounded-md" />
         </a>
 
         {loginstatus ? (
-          <div className="flex gap-8">
+          <div className="flex gap-8 items-center">
             <ButtonComponent />
             <div className="mr-8 hover:cursor-pointer ">
-              <AvatarComponent avatar={c1} />
+              <AvatarComponent avatar={avatar} />
             </div>
           </div>
         ) : (
-          <span className="h-[2.8rem] px-4 py-1 header-btn bg-custom_primary rounded-md transition-colors duration-500 hover:bg-custom_primary">
+          <span className="h-[2.8rem] px-4 py-1 md:mr-4 header-btn bg-blue-300 rounded-md transition-colors duration-500 hover:bg-blue-500">
             <a href="/login" className=" text-white text-xl ">
               Login
             </a>

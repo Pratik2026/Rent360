@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
-import c1 from "../assets/c1.png";
-import c2 from "../assets/c2.png";
+import avatar from "../assets/avatar.png";
+
 import {
   DotsThreeVertical,
   Chats,
@@ -79,7 +79,7 @@ export const Chat = () => {
           <div className="header flex justify-between items-center h-20 bg-[#EDEDED]">
             <div className="flex w-full">
               <div className="flex">
-                <img className="h-10 rounded-full mx-4" src={c1} alt="" />
+                <img className="h-10 rounded-full mx-4" src={avatar} alt="" />
                 <div className="flex flex-col">
                   <div className="title ml-1 text-lg font-medium">
                     {sellerid}
@@ -106,7 +106,7 @@ export const Chat = () => {
                   <div className="flex gap-3">
                     <div className="w-12 h-12 rounded-full bg-rose-400 p-0.5">
                       <img
-                        src={messageContent.author === userid ? c2 : c1}
+                        src={messageContent.author === userid ? avatar : avatar}
                         alt=""
                         className="h-full w-full object-cover rounded-full"
                       />

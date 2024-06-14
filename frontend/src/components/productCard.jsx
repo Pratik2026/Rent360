@@ -52,7 +52,7 @@ export const ProductCard = (props) => {
   return (
     <>
       <Card
-        className="max-w-xs overflow-hidden rounded-md shadow-md"
+        className="w-[300px] overflow-hidden rounded-md bg-slate-100"
         imgSrc={props.img}
         imgSize="md"
       >

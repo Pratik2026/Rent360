@@ -32,7 +32,7 @@ const FilteredProducts = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Navbar />
       <div className="categories my-20 bg-slate-100 shadow-md mb-4 ">
         <DropdownComponent />
@@ -56,7 +56,7 @@ const FilteredProducts = () => {
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

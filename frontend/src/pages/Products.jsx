@@ -38,13 +38,13 @@ const Products = () => {
   }, [products]);
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="categories my-20 pl-10 bg-slate-100 shadow-md mb-4 ">
+      <div className="categories my-20 pl-10 bg-slate-100 shadow-md w-full ">
         <DropdownComponent />
       </div>
 
-      <div className="services-container flex justify-center items-center gap-16 flex-wrap">
+      <div className="services-container flex flex-col md:flex-row justify-center items-center gap-16 flex-wrap w-full">
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCard
@@ -60,7 +60,7 @@ const Products = () => {
         )}
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

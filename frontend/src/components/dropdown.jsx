@@ -25,7 +25,7 @@ export const DropdownComponent = () => {
       dismissOnClick={true}
       color={"#002F34"}
     >
-      <div className="flex justify-center items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap">
         <Dropdown.Item>
           <a href="/search/car">Cars</a>
         </Dropdown.Item>

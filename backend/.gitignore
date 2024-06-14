@@ -1,2 +1,5 @@
 # Config files
 dbconfig.js
+
+# Node modules
+node_modules/
