@@ -8,54 +8,9 @@
   ],
   "routes": [
     {
-      "src": "/register",
-      "dest": "/auth/register"
-    },
-    {
-      "src": "/login",
-      "dest": "/auth/login"
-    },
-    {
-      "src": "/logout",
-      "dest": "/auth/logout"
-    },
-    {
-      "src": "/wishlist",
-      "dest": "/user/wishlist"
-    },
-    {
-      "src": "/wishlist/add",
-      "dest": "/user/wishlist/add"
-    },
-    {
-      "src": "/wishlist/check",
-      "dest": "/user/wishlist/check"
-    },
-    {
-      "src": "/add",
-      "dest": "/products/add"
-    },
-    {
-      "src": "/user",
-      "dest": "/products/user"
-    },
-    {
-      "src": "/product",
-      "dest": "/products/product"
-    },
-    {
-      "src": "/filtered",
-      "dest": "/products/filtered"
-    },
-    {
-      "src": "/products",
-      "dest": "/products/"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
+      "src": "/[^.]+",
+      "dest": "/",
+      "status": 200
     }
   ]
 }
