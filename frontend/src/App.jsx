@@ -11,7 +11,7 @@ import { Wishlist } from "./pages/wishlist.jsx";
 import { Login } from "./pages/login.jsx";
 import { Register } from "./pages/register.jsx";
 import FilteredProducts from "./pages/filteredProduct.jsx";
-import { Chat } from "./pages/chat.jsx";
+// import { Chat } from "./pages/chat.jsx";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/search/:category" element={<FilteredProducts />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
-        <Route path="/chat/:sellerid" element={<Chat />} />
+        {/* <Route path="/chat/:sellerid" element={<Chat />} /> */}
       </Routes>
     </BrowserRouter>
   );
