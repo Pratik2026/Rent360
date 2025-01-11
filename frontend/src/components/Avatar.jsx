@@ -57,10 +57,6 @@ const PopoverContent = () => {
   );
 };
 
-AvatarComponent.propTypes = {
-  avatar: PropTypes.string,
-};
-
 export const AvatarComponent = ({ avatar }) => {
   return (
     
@@ -68,4 +64,8 @@ export const AvatarComponent = ({ avatar }) => {
       <Avatar shape="rounded" img={avatar} size="md"/>
     </Popover>
   );
+};
+
+AvatarComponent.propTypes = {
+  avatar: PropTypes.string,
 };
