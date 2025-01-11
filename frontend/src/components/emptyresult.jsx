@@ -1,6 +1,12 @@
 
 "use client";
 import { Empty } from "keep-react";
+import Proptypes from 'prop-types';
+
+EmptyComponent.propTypes = {
+  title: Proptypes.string,
+  content: Proptypes.string,
+};
 
 export const EmptyComponent = (props) => {
   return (

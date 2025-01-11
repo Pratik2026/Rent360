@@ -11,7 +11,6 @@ import { Toaster, toast } from "react-hot-toast";
 
 
 function View() {
-  const [Itemstatus, setItemStatus] = useState("Available");
   const [wishStatus, setWishStatus] = useState(false);
   const [sellerid, setSellerid] = useState('')
 
@@ -113,9 +112,10 @@ function View() {
                 <Badge
                   size="sm"
                   colorType="light"
-                  color={Itemstatus == "Available" ? "success" : "error"}
+                  // color={Itemstatus == "Available" ? "success" : "error"}
+                  color="success"
                 >
-                  {Itemstatus}
+                  {/* {Itemstatus} */}Available
                 </Badge>
               </div>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -51,6 +51,8 @@ const Login = () => {
       }
     }
   };
+
+  console.log(auth, name, userid);
 
   const handleValidation = () => {
     const { userid, password } = values;
@@ -112,7 +114,7 @@ const Login = () => {
               Forgot Password?
             </div>
             <div>
-              <span className=" text-gray-700 mr-2">Didn't sign up?</span>
+              <span className=" text-gray-700 mr-2">Didn&apos;t sign up?</span>
               <a
                 href="/register"
                 className=" text-custom_primary font-semibold cursor-pointer"

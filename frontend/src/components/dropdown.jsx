@@ -27,7 +27,7 @@ export const DropdownComponent = () => {
     >
       <div className="flex items-center gap-2 flex-wrap">
         <Dropdown.Item>
-          <a href="/search/car">Cars</a>
+          <a href="/search/car" onClick={() => handleClick}>Cars</a>
         </Dropdown.Item>
         <Dropdown.Item>
           <a href="/search/mobile">Mobiles</a>

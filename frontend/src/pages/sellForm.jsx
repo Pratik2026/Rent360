@@ -7,6 +7,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { addProductRoute } from "../../utils/api_routes";
 
+const toastOptions = {
+  position: "top-center",
+  duration: 1000,
+};
+
 const SellForm = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState({

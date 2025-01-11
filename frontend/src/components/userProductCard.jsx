@@ -1,10 +1,18 @@
 "use client";
 import { Heart } from "phosphor-react";
-import { Badge, Button, Card } from "keep-react";
+import { Badge, Card } from "keep-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { addWishlistRoute, checkWishlistRoute } from "../../utils/api_routes";
+import Proptypes from 'prop-types';
+
+ProductCard.propTypes = {
+  id: Proptypes.number,
+  img: Proptypes.string,
+  price: Proptypes.string,
+  title: Proptypes.string,
+};
 
 export const ProductCard = (props) => {
   const navigate = useNavigate();
@@ -55,6 +63,7 @@ export const ProductCard = (props) => {
         className="max-w-xs overflow-hidden rounded-md shadow-md"
         imgSrc={props.img}
         imgSize="md"
+        onClick={handleClick}
       >
         <Card.Container className="absolute top-3.5 right-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-50/50">
           <Heart

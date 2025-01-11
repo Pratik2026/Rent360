@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { DatePicker, Button, Card } from "keep-react";
 import { CurrencyInr, ArrowLeft } from "phosphor-react";
 import beats from "../assets/beats.png";
@@ -16,7 +16,7 @@ const PaymentPage = () => {
     const differenceInTime = endDate.getTime() - startDate.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24) + 1;
     const calculatedAmount = 79 * differenceInDays; // Replace this with your actual product price
-    c;
+
     setPaymentAmount(calculatedAmount);
   };
 

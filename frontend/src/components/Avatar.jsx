@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
-"use client";
 import { Avatar, Popover } from "keep-react";
 import { User, Heart, SignOut, Gear, Question } from "phosphor-react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { logoutRoute } from "../../utils/api_routes";
+import PropTypes from 'prop-types';
 
 const PopoverContent = () => {
 
@@ -56,6 +55,10 @@ const PopoverContent = () => {
       </div>
     </div>
   );
+};
+
+AvatarComponent.propTypes = {
+  avatar: PropTypes.string,
 };
 
 export const AvatarComponent = ({ avatar }) => {
