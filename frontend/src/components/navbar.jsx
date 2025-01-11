@@ -13,7 +13,7 @@ const Navbar = () => {
   // const [message, setMessage] = React.useState("");
 
   // const navigate = useNavigate();
-  // let a = "";
+  // let a = 
 
   // const handleKeyDown = (event) => {
   //   console.log("Key pressed:", event.key);
@@ -23,7 +23,7 @@ const Navbar = () => {
   //     const enteredValue = event.target.value;
   //     navigate(`/search/${enteredValue}`);
   //     window.location.reload();
-  //     // a = "";
+  //     // a = 
   //   }
   // };
 

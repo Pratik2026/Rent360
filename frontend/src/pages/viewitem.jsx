@@ -1,4 +1,4 @@
-"use client";
+
 import { Chat, Phone, PlusCircle } from "phosphor-react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";

@@ -1,4 +1,4 @@
-"use client";
+
 import { useState } from "react";
 import { Dropdown, SearchBar } from "keep-react";
 import { ArrowRight, MagnifyingGlass } from "phosphor-react";

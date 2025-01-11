@@ -1,4 +1,4 @@
-"use client";
+
 import i1 from "../assets/1.jpg";
 import i2 from "../assets/2.png";
 import i3 from "../assets/3.jpg";

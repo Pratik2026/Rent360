@@ -1,5 +1,5 @@
 
-"use client";
+
 import { Rating } from "keep-react";
 
 export const RatingComponent = () => {

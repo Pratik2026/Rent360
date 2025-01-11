@@ -1,5 +1,5 @@
 
-"use client";
+
 import { Pagination } from "keep-react";
 import { useState } from "react";
 

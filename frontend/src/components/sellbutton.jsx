@@ -1,4 +1,4 @@
-"use client";
+
 import { Button } from "keep-react";
 import { Plus } from "phosphor-react";
 import { useNavigate } from "react-router-dom";

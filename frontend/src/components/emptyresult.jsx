@@ -1,5 +1,5 @@
 
-"use client";
+
 import { Empty } from "keep-react";
 import Proptypes from 'prop-types';
 

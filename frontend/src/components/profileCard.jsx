@@ -1,4 +1,4 @@
-"use client";
+
 import { Avatar, Button, Card } from "keep-react";
 import { EnvelopeSimple } from "phosphor-react";
 import avatar from "../assets/avatar.png";

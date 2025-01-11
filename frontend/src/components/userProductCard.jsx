@@ -1,4 +1,4 @@
-"use client";
+
 import { Heart } from "phosphor-react";
 import { Badge, Card } from "keep-react";
 import { useNavigate } from "react-router-dom";
