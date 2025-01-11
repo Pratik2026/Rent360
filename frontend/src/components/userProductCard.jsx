@@ -7,13 +7,6 @@ import axios from "axios";
 import { addWishlistRoute, checkWishlistRoute } from "../../utils/api_routes";
 import Proptypes from 'prop-types';
 
-ProductCard.propTypes = {
-  id: Proptypes.number,
-  img: Proptypes.string,
-  price: Proptypes.string,
-  title: Proptypes.string,
-};
-
 export const ProductCard = (props) => {
   const navigate = useNavigate();
 
@@ -89,4 +82,11 @@ export const ProductCard = (props) => {
       </Card>
     </>
   );
+};
+
+ProductCard.propTypes = {
+  id: Proptypes.number,
+  img: Proptypes.string,
+  price: Proptypes.string,
+  title: Proptypes.string,
 };

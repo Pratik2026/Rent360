@@ -8,13 +8,6 @@ import{ Toaster, toast } from "react-hot-toast";
 import { addWishlistRoute, checkWishlistRoute } from "../../utils/api_routes";
 import Proptypes from 'prop-types';
 
-ProductCard.propTypes = {
-  id: Proptypes.number,
-  img: Proptypes.string,
-  price: Proptypes.string,
-  title: Proptypes.string,
-};
-
 export const ProductCard = (props) => {
   const navigate = useNavigate();
 
@@ -87,4 +80,11 @@ export const ProductCard = (props) => {
       <Toaster position="top-center" />
     </>
   );
+};
+
+ProductCard.propTypes = {
+  id: Proptypes.number,
+  img: Proptypes.string,
+  price: Proptypes.string,
+  title: Proptypes.string,
 };
